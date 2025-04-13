@@ -1,0 +1,22 @@
+[
+  {
+    "id": "frajacket-1",
+    "name": "Frajacket Marrón Tierra",
+    "description": "Chaqueta con capucha en tonos tierra, confeccionada con materiales reciclados. Diseño cálido y funcional con detalles en color mostaza en las mangas.",
+    "price": 45900,
+    "images": ["/images/frajacket1.png"],
+    "materials": "Lana reciclada, Forro interior de algodón recuperado, Cierre metálico reciclado",
+    "labor_hours": 12,
+    "in_stock": false
+  },
+  {
+    "id": "frajacket-2",
+    "name": "Frajacket Gris con Rojo",
+    "description": "Chaqueta con capucha en tono gris con franja diagonal roja de diseño étnico. Incluye forro interior cálido y puños de borrego sintético reciclado.",
+    "price": 48900,
+    "images": ["/images/frajacket2.jpeg"],
+    "materials": "Lana reciclada, Tela étnica reutilizada, Forro térmico, Borrego sintético reciclado",
+    "labor_hours": 14,
+    "in_stock": true
+  }
+]
