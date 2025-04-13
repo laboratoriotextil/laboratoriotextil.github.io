@@ -107,7 +107,7 @@ const poleronesData = [
     "price": 28900,
     "materials": "Algodón reciclado, telas recuperadas con estampado étnico, ribetes elásticos",
     "labor_hours": 6,
-    "in_stock": false,
+    "in_stock": true,
     "images": ["/images/pol11.png"]
   }
 
