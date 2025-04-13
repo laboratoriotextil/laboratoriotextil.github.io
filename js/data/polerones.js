@@ -8,7 +8,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["images/pol1.png"]
+    "images": ["images/pol2.png"]
   },
   {
     "id": "poleron2",
@@ -18,7 +18,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas, ribetes elásticos en verde menta",
     "labor_hours": 5,
     "in_stock": true,
-    "images": ["images/pol2.png"]
+    "images": ["images/pol6.png"]
   },
   {
     "id": "poleron3",
@@ -28,7 +28,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampado de gatitos, ribetes elásticos",
     "labor_hours": 7,
     "in_stock": true,
-    "images": ["images/pol3.png"]
+    "images": ["images/pol1.png"]
   },
   {
     "id": "poleron4",
@@ -38,7 +38,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampados geométricos, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["images/pol4.png"]
+    "images": ["images/pol7.png"]
   },
   {
     "id": "poleron5",
@@ -58,7 +58,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampados, ribetes elásticos",
     "labor_hours": 5,
     "in_stock": true,
-    "images": ["images/pol6.png"]
+    "images": ["images/pol10.png"]
   },
   {
     "id": "poleron7",
@@ -68,7 +68,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampado marino, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["images/pol7.png"]
+    "images": ["images/pol4.png"]
   },
   {
     "id": "poleron8",
@@ -78,7 +78,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampados de animal print, ribetes elásticos",
     "labor_hours": 7,
     "in_stock": true,
-    "images": ["images/pol8.png"]
+    "images": ["images/pol3.png"]
   },
   {
     "id": "poleron9",
@@ -88,7 +88,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampados geométricos, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["images/pol9.png"]
+    "images": ["images/pol8.png"]
   },
   {
     "id": "poleron10",
@@ -98,6 +98,17 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampado floral, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["images/pol10.png"]
+    "images": ["images/pol9.png"]
+  },
+  {
+    "id": "poleron11",
+    "name": "Polerón Tríada",
+    "description": "Polerón infantil con diseño geométrico en blanco y negro al centro. Cuerpo azul marino, mangas celestes y ribetes burdeo. Ideal para un look moderno y cómodo.",
+    "price": 28900,
+    "materials": "Algodón reciclado, telas recuperadas con estampado étnico, ribetes elásticos",
+    "labor_hours": 6,
+    "in_stock": false,
+    "images": ["/images/pol11.png"]
   }
+
 ];
