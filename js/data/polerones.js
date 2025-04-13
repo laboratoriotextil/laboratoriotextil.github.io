@@ -108,7 +108,7 @@ const poleronesData = [
     "materials": "Algodón reciclado, telas recuperadas con estampado étnico, ribetes elásticos",
     "labor_hours": 6,
     "in_stock": true,
-    "images": ["/images/pol11.png"]
+    "images": ["images/pol11.png"]
   }
 
 ];
