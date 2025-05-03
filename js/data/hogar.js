@@ -9,5 +9,15 @@ const hogarData = [
     "labor_hours": 4,
     "in_stock": true,
     "images": ["images/puff1.png"]
+  },
+  {
+    "id": "puff2",
+    "name": "Puff Turquesa",
+    "description": "Puff triangular color turquesa con diseño de ondas, ideal para agregar estilo y comodidad a cualquier ambiente.",
+    "price": 36000,
+    "materials": "Tela suave con textura, relleno liviano",
+    "labor_hours": 4,
+    "in_stock": true,
+    "images": ["images/puff2.png"]
   }
 ];
