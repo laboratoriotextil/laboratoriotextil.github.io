@@ -4,6 +4,7 @@
 document.write('<script src="js/data/polerones.js"></script>');
 document.write('<script src="js/data/colets.js"></script>');
 document.write('<script src="js/data/frajackets.js"></script>');
+document.write('<script src="js/data/hogar.js"></script>');
 
 document.addEventListener('DOMContentLoaded', function() {
     // Navegación móvil
@@ -36,6 +37,8 @@ function loadProducts() {
         products = coletsData;
     } else if (productType === 'frajackets') {
         products = frajacketsData;
+    } else if (productType === 'hogar') {
+        products = hogarData;
     }
     
     if (products.length > 0) {

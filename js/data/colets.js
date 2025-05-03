@@ -21,16 +21,6 @@ const coletsData = [
     "images": ["images/estuche.png"]
   },
   {
-    "id": "puff1",
-    "name": "Puff Negro",
-    "description": "Puff triangular de tela negra con asa superior, ideal para espacios modernos y cómodos.",
-    "price": 35000,
-    "materials": "Tela resistente, relleno liviano",
-    "labor_hours": 4,
-    "in_stock": true,
-    "images": ["images/puff1.png"]
-  },
-  {
     "id": "scrunchie2",
     "name": "Scrunchie Floral Rojo",
     "description": "Scrunchie artesanal con estampado floral en tonos rojos y verdes. Hecho con tela reciclada y diseñado para destacar en tu peinado o muñeca.",
