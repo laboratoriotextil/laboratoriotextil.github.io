@@ -1,5 +1,5 @@
-// Datos de productos - Accesorios
-const scrunchiesData = [
+// Datos de productos - Colets y Accesorios
+const coletsData = [
   {
     "id": "scrunchie1",
     "name": "Scrunchie Multicolor",
