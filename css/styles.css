@@ -357,6 +357,18 @@ footer {
 .order-form .btn:hover {
   opacity: 0.9;
 }
+/* Introducción al formulario de pedido */
+.order-intro {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+.order-intro p {
+  margin-bottom: 1rem;
+}
 
 /* Calligraphy style for Polerones info */
 .product-info .info-content {

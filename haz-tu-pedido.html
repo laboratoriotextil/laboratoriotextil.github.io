@@ -30,16 +30,20 @@
     </header>
     <section style="padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--primary-color);">Haz tu pedido</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; font-size: 2rem; color: var(--primary-color);">Haz tu pedido</h2>
+            <div class="order-intro">
+                <p>En Laboratorio Textil cada prenda o pequeña serie es un proyecto único. Nos apasiona transformar tus ideas en realidad artesanal.</p>
+                <p>Para lograr un resultado impecable, cuéntanos con todo detalle: estilo, colores, materiales, tallas y cualquier otro requisito. ¡Cuanta más información, mejor!</p>
+            </div>
             <form class="order-form" action="https://formspree.io/f/xwpolgdp" method="POST">
                 <input type="hidden" name="_next" value="thank-you.html">
                 <div class="form-group">
                     <label for="email">Tu correo electrónico</label>
-                    <input type="email" id="email" name="_replyto" required>
+                    <input type="email" id="email" name="_replyto" placeholder="tucorreo@ejemplo.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Cuéntanos lo que necesitas</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <label for="message">Cuéntanos tu idea con todo detalle</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Por ejemplo: Quiero un polerón en tonos pastel con bordado de mi nombre y capucha..." required></textarea>
                 </div>
                 <div class="form-group" style="text-align: center;">
                     <button type="submit" class="btn">Enviar</button>
