@@ -323,3 +323,20 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Calligraphy style for Polerones info */
+.product-info .info-content {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 40px auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.product-info .info-content h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
