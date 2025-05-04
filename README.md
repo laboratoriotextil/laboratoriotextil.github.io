@@ -81,3 +81,46 @@ Para marcar un producto como agotado, simplemente cambia el valor de `stock` a `
 ## Cómo Actualizar Precios
 
 Para actualizar el precio de un producto, modifica el valor del campo `price` en el archivo JSON correspondiente. El precio debe ser un número entero en pesos chilenos (sin puntos ni símbolos).
+
+## Automatización con Python
+
+Hemos creado herramientas en Python para agilizar la adición de nuevos productos a la web.
+
+### Requisitos
+- Python 3.7 o superior
+- Variables de entorno: `OPENAI_API_KEY` (tu clave de OpenAI)
+
+### Script de línea de comandos
+El archivo `add_product.py` automatiza el flujo completo:
+1. Copia tu imagen fuente a `images/`
+2. Genera una versión de estudio vía la API de OpenAI
+3. Genera en español una descripción persuasiva
+4. Actualiza el archivo de datos JS correspondiente en `js/data/` con el nuevo producto
+5. Deja las imágenes y el JS listos y staged para commit
+
+Ejemplo de uso:
+```bash
+export OPENAI_API_KEY="sk-..."
+pip install openai requests
+./add_product.py \
+  --type polerones \
+  --name "Polerón Sol" \
+  --price 29900 \
+  --materials "Algodón reciclado, ribetes elásticos" \
+  --labor 5 \
+  --in-stock \
+  --image path/to/source.png
+```
+
+### Aplicación Streamlit
+Para una interfaz gráfica más intuitiva, usa la app Streamlit:
+1. Instala dependencias:
+   ```bash
+   pip install streamlit openai requests
+   ```
+2. Ejecuta la app:
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+La interfaz te guiará para subir la imagen, completar datos, generar descriptión y previsualizar antes de actualizar el sitio.
+
