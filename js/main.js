@@ -101,9 +101,6 @@ function createProductCard(product) {
             <div class="product-details">
                 <h4>Materiales:</h4>
                 <p>${product.materials}</p>
-                
-                <h4>Proceso de elaboración:</h4>
-                <p>Tiempo de trabajo: ${product.labor_hours} horas</p>
             </div>
         </div>
     `;
