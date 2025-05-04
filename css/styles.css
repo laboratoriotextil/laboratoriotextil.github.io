@@ -369,6 +369,12 @@ footer {
 .order-intro p {
   margin-bottom: 1rem;
 }
+/* Nota adicional en formulario */
+.order-form .form-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+}
 /* Fieldset personalizado en formulario de pedido */
 .order-form fieldset {
   border: 1px solid var(--border-color);
