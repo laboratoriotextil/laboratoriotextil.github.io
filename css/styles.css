@@ -369,6 +369,29 @@ footer {
 .order-intro p {
   margin-bottom: 1rem;
 }
+/* Fieldset personalizado en formulario de pedido */
+.order-form fieldset {
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.order-form legend {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.order-form fieldset .form-group {
+  margin-bottom: 15px;
+}
+.order-form input[type="range"] {
+  width: 100%;
+}
+.order-form input[type="color"] {
+  width: 50px;
+  height: 34px;
+  padding: 0;
+  border: none;
+}
 
 /* Calligraphy style for Polerones info */
 .product-info .info-content {
