@@ -337,8 +337,8 @@ footer {
   margin-bottom: 8px;
   font-weight: 500;
 }
- .order-form input[type="file"],
- .order-form input[type="email"],
+ /* Estilo para todos los campos del formulario de pedido */
+ .order-form input,
  .order-form textarea {
   width: 100%;
   padding: 10px;
