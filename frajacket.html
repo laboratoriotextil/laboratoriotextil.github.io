@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- i18n scripts -->
+    <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+    <script src="js/i18n.js"></script>
 </head>
 <body>
     <header>
@@ -15,13 +18,23 @@
             <div class="logo-container">
                 <img src="images/logo.jpeg" alt="Logo PUA" class="logo">
             </div>
+            <!-- Language selector -->
+            <div class="lang-selector">
+                <a href="#" data-lang="es" class="active">🇨🇱 ES</a> |
+                <a href="#" data-lang="it">🇨🇭 IT</a>
+            </div>
+            <!-- Language selector -->
+            <div class="lang-selector">
+                <a href="#" data-lang="es" class="active">ES</a> |
+                <a href="#" data-lang="it">IT</a>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="polerones.html">Polerones</a></li>
-                    <li><a href="frajacket.html">Frajacket</a></li>
-                    <li><a href="accesorios.html">Accesorios</a></li>
-                    <li><a href="hogar.html">Hogar</a></li>
-                    <li><a href="haz-tu-pedido.html">Haz tu pedido</a></li>
+                    <li><a href="polerones.html" data-i18n="nav.polerones">Polerones</a></li>
+                    <li><a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a></li>
+                    <li><a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a></li>
+                    <li><a href="hogar.html" data-i18n="nav.hogar">Hogar</a></li>
+                    <li><a href="haz-tu-pedido.html" data-i18n="nav.haz_pedido">Haz tu pedido</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,7 +42,7 @@
 
     <section class="page-header">
         <div class="container">
-            <h1>Frajacket</h1>
+            <h1 data-i18n="nav.frajacket">Frajacket</h1>
             <p></p>
         </div>
     </section>
@@ -45,12 +58,12 @@
     <section class="product-info">
         <div class="container">
             <div class="info-content">
-                <h2>Sobre nuestras Frajacket</h2>
-                <p>Nuestras Frajacket representan la fusión perfecta entre funcionalidad, calidez y diseño sostenible. Cada pieza es confeccionada artesanalmente utilizando materiales reciclados de alta calidad, dando nueva vida a textiles que de otra forma serían desechados.</p>
+                <h2 data-i18n="frajacket.info.title">Sobre nuestras Frajacket</h2>
+                <p data-i18n="frajacket.info.p1">Nuestras Frajacket representan la fusión perfecta entre funcionalidad, calidez y diseño sostenible.</p>
                 
-                <p>El proceso de creación de cada Frajacket comienza con la cuidadosa selección de materiales, priorizando texturas y tonalidades que se complementen entre sí. Luego, a través de un meticuloso trabajo de corte y confección, transformamos estos materiales en prendas únicas que combinan estética y practicidad.</p>
+                <p data-i18n="frajacket.info.p2">El proceso de creación de cada Frajacket comienza con la cuidadosa selección de materiales, priorizando texturas y tonalidades que se complementen entre sí.</p>
                 
-                <p>Cada detalle, desde los bolsillos hasta los cierres, es considerado tanto por su funcionalidad como por su aporte al diseño general. El resultado son chaquetas con personalidad propia, que no solo mantienen el calor sino que también cuentan una historia de sostenibilidad y creatividad.</p>
+                <p data-i18n="frajacket.info.p3">Cada detalle, desde los bolsillos hasta los cierres, es considerado tanto por su funcionalidad como por su aporte al diseño general.</p>
             </div>
         </div>
     </section>
@@ -60,18 +73,18 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>PUA</h3>
-                    <p>Diseño textil infantil sostenible</p>
-                    <p>Valparaíso, Chile</p>
+                    <p data-i18n="footer.tagline">Diseño textil infantil sostenible</p>
+                    <p data-i18n="footer.location">Valparaíso, Chile</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Enlaces</h3>
-                    <a href="polerones.html">Polerones</a>
-                    <a href="frajacket.html">Frajacket</a>
-                    <a href="accesorios.html">Accesorios</a>
-                    <a href="hogar.html">Hogar</a>
+                    <h3 data-i18n="footer.links">Enlaces</h3>
+                    <a href="polerones.html" data-i18n="nav.polerones">Polerones</a>
+                    <a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a>
+                    <a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a>
+                    <a href="hogar.html" data-i18n="nav.hogar">Hogar</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Síguenos</h3>
+                    <h3 data-i18n="footer.follow_us">Síguenos</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/pua_disenos/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -79,7 +92,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 PUA - Todos los derechos reservados</p>
+                <p data-i18n="footer.copyright">© 2025 PUA - Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
