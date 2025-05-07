@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- i18n scripts -->
-    <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
-    <script src="js/i18n.js"></script>
 </head>
 <body>
     <header>
@@ -18,47 +15,44 @@
             <div class="logo-container">
                 <img src="images/logo.jpeg" alt="Logo PUA" class="logo">
             </div>
-            <!-- Language selector -->
-            <div class="lang-selector">
-                <a href="#" data-lang="es" class="active">🇨🇱 ES</a> |
-                <a href="#" data-lang="it">🇨🇭 IT</a>
-            </div>
             <nav>
                 <ul>
-                    <li><a href="polerones.html" data-i18n="nav.polerones">Polerones</a></li>
-                    <li><a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a></li>
-                    <li><a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a></li>
-                    <li><a href="hogar.html" data-i18n="nav.hogar">Hogar</a></li>
-                    <li><a href="haz-tu-pedido.html" data-i18n="nav.haz_pedido">Haz tu pedido</a></li>
+                    <li><a href="polerones.html">Polerones</a></li>
+                    <li><a href="frajacket.html">Frajacket</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="hogar.html">Hogar</a></li>
+                    <li><a href="haz-tu-pedido.html">Haz tu pedido</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <section style="padding: 80px 0;">
         <div class="container">
-            <h2 data-i18n="nav.haz_pedido" style="text-align: center; margin-bottom: 20px; font-size: 2rem; color: var(--primary-color);">Haz tu pedido</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; font-size: 2rem; color: var(--primary-color);">Haz tu pedido</h2>
             <div class="order-intro">
-                <p data-i18n="order.intro.p1"></p>
-                <p data-i18n="order.intro.p2"></p>
+                <p>En Laboratorio Textil cada prenda o pequeña serie es un proyecto único. Nos apasiona transformar tus ideas en realidad artesanal.</p>
+                <p>Para lograr un resultado impecable, cuéntanos con todo detalle: estilo, colores, materiales, tallas y cualquier otro requisito. ¡Cuanta más información, mejor!</p>
             </div>
             <form class="order-form" action="https://formspree.io/f/xwpolgdp" method="POST">
                 <input type="hidden" name="_next" value="thank-you.html">
                 <!-- Descripción principal -->
                 <div class="form-group">
-                    <label data-i18n="order.label.project" for="message"></label>
-                    <textarea id="message" name="message" rows="6" data-i18n-placeholder="order.placeholder.project" required></textarea>
-                    <p class="form-note" data-i18n-html="order.note.fabrics"></p>
+                    <label for="message">Cuéntanos tu proyecto en detalle</label>
+                    <textarea id="message" name="message" rows="6"
+                        placeholder="Ejemplo: Quiero un polerón infantil acolchado, talla M (6 años), en felpa de algodón orgánico color celeste, con estampado de montañas en la espalda, capucha forrada, puños elásticos y bolsillos laterales."
+                        required></textarea>
+                    <p class="form-note">Si tienes telas propias que quieras que utilicemos, envíanos sus imágenes al correo <a href="mailto:pua@laboratoriotextil.com">pua@laboratoriotextil.com</a> y te responderemos a la brevedad.</p>
                 </div>
                 <!-- Contacto -->
                 <div class="form-group">
-                    <label data-i18n="order.label.email" for="email"></label>
-                    <input type="email" id="email" name="_replyto" data-i18n-placeholder="order.placeholder.email" required>
-                    <p class="form-note" data-i18n="order.note.reply"></p>
+                    <label for="email">Tu correo electrónico</label>
+                    <input type="email" id="email" name="_replyto" placeholder="tucorreo@ejemplo.com" required>
+                    <p class="form-note">Aquí recibirás información detallada del producto, presupuesto y formas de pago.</p>
                 </div>
                 <!-- Fin del formulario -->
                 <!-- Enviar -->
                 <div class="form-group" style="text-align: center;">
-                    <button type="submit" class="btn" data-i18n="order.button.submit"></button>
+                    <button type="submit" class="btn">Enviar</button>
                 </div>
             </form>
         </div>
@@ -68,19 +62,19 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>PUA</h3>
-                    <p data-i18n="footer.tagline">Diseño textil infantil sostenible</p>
-                    <p data-i18n="footer.location">Valparaíso, Chile</p>
+                    <p>Diseño textil infantil sostenible</p>
+                    <p>Valparaíso, Chile</p>
                 </div>
                 <div class="footer-section">
-                    <h3 data-i18n="footer.links">Enlaces</h3>
-                    <a href="polerones.html" data-i18n="nav.polerones">Polerones</a>
-                    <a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a>
-                    <a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a>
-                    <a href="hogar.html" data-i18n="nav.hogar">Hogar</a>
-                    <a href="haz-tu-pedido.html" data-i18n="nav.haz_pedido">Haz tu pedido</a>
+                    <h3>Enlaces</h3>
+                    <a href="polerones.html">Polerones</a>
+                    <a href="frajacket.html">Frajacket</a>
+                    <a href="accesorios.html">Accesorios</a>
+                    <a href="hogar.html">Hogar</a>
+                    <a href="haz-tu-pedido.html">Haz tu pedido</a>
                 </div>
                 <div class="footer-section">
-                    <h3 data-i18n="footer.follow_us">Síguenos</h3>
+                    <h3>Síguenos</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/pua_disenos/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -88,7 +82,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p data-i18n="footer.copyright">© 2025 PUA - Todos los derechos reservados</p>
+                <p>&copy; 2025 PUA - Todos los derechos reservados</p>
             </div>
         </div>
     </footer>

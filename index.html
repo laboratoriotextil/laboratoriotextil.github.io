@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- i18n scripts -->
-    <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
-    <script src="js/i18n.js"></script>
 </head>
 <body>
     <header>
@@ -18,18 +15,13 @@
             <div class="logo-container">
                 <img src="images/logo.jpeg" alt="Logo PUA" class="logo">
             </div>
-            <!-- Language selector -->
-            <div class="lang-selector">
-                <a href="#" data-lang="es" class="active">🇨🇱 ES</a> |
-                <a href="#" data-lang="it">🇨🇭 IT</a>
-            </div>
             <nav>
                 <ul>
-                    <li><a href="polerones.html" data-i18n="nav.polerones">Polerones</a></li>
-                    <li><a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a></li>
-                    <li><a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a></li>
-                    <li><a href="hogar.html" data-i18n="nav.hogar">Hogar</a></li>
-                    <li><a href="haz-tu-pedido.html" data-i18n="nav.haz_pedido">Haz tu pedido</a></li>
+                    <li><a href="polerones.html">Polerones</a></li>
+                    <li><a href="frajacket.html">Frajacket</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="hogar.html">Hogar</a></li>
+                    <li><a href="haz-tu-pedido.html">Haz tu pedido</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,23 +29,23 @@
 
     <section class="hero" style="background-image: url('images/model.jpg'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
         <div class="container">
-            <h1 data-i18n="hero.title" style="color: #f8f9fa; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Laboratorio Textil Sostenible</h1>
-            <p data-i18n="hero.subtitle" style="color: #f8f9fa; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Creamos prendas únicas y de calidad, valorando el oficio de la costura y respetando el medio ambiente</p>
+            <h1 style="color: #f8f9fa; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Laboratorio Textil Sostenible</h1>
+            <p style="color: #f8f9fa; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Creamos prendas únicas y de calidad, valorando el oficio de la costura y respetando el medio ambiente</p>
         </div>
     </section>
 
     <section class="philosophy">
         <div class="container">
-            <h2 data-i18n="philosophy.title"></h2>
+            <h2>Nuestra Filosofía</h2>
             <div class="philosophy-content">
                 <div class="philosophy-text">
-                    <p data-i18n-html="philosophy.p1"></p>
+                    <p>PUA nace como una respuesta creativa a la problemática del desecho textil, con la misión de <strong>reutilizar, reducir y reciclar</strong> materiales para transformarlos en objetos únicos, prácticos y útiles.</p>
                     
-                    <p data-i18n="philosophy.p2"></p>
+                    <p>Somos la unión y creación de diversos materiales con la intención de reducir y reciclar el desecho textil, a través de diseños únicos enfocados principalmente en el mundo infantil.</p>
                     
-                    <p data-i18n="philosophy.p3"></p>
+                    <p>Cada prenda que creamos es el resultado de un cuidadoso proceso artesanal, donde valoramos profundamente el oficio de la costura y la tradición textil, combinándolo con diseños contemporáneos y funcionales.</p>
                     
-                    <p data-i18n="philosophy.p4"></p>
+                    <p>Mientras Laboratorio Textil representa nuestra rama de investigación y experimentación, PUA es nuestra línea de productos que materializa esa investigación en prendas y accesorios para los más pequeños.</p>
                 </div>
                 <div class="philosophy-image">
                     <img src="images/logo_bordado.jpg" alt="Logo PUA bordado" class="bordered-image">
@@ -68,19 +60,21 @@
     <section id="a-tu-pinta" class="a-tu-pinta" style="background-image: url('images/contact_image.png'); background-size: cover; background-position: center; padding: 80px 0; position: relative;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(41, 50, 65, 0.85);"></div>
         <div class="container" style="position: relative; z-index: 2;">
-            <h2 style="color: #f8f9fa; font-size: 2.5rem; margin-bottom: 30px; text-align: center; font-weight: 700;" data-i18n="section.custom.title">A TU PINTA</h2>
+            <h2 style="color: #f8f9fa; font-size: 2.5rem; margin-bottom: 30px; text-align: center; font-weight: 700;">A TU PINTA</h2>
             <div class="personalization-info" style="background-color: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 10px; margin-bottom: 40px; backdrop-filter: blur(5px);">
-                <p data-i18n="section.custom.p1" style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;"></p>
-                <p data-i18n="section.custom.p2" style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;"></p>
-                <p data-i18n="section.custom.p3" style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;"></p>
+                <p style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">En PUA creemos que cada prenda debe ser tan única como quien la usa. Por eso, te ofrecemos la posibilidad de personalizar cualquier producto según tus preferencias y necesidades específicas.</p>
+                <p style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">¿Te gusta un diseño que está agotado? ¿Quieres modificar colores o añadir detalles especiales? ¿Necesitas una talla diferente o una combinación de materiales distinta? ¡No hay problema! Podemos crear una versión personalizada especialmente para ti.</p>
+                <p style="color: #f8f9fa; font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">Cuéntanos tu idea y trabajaremos juntos para hacerla realidad, manteniendo siempre nuestra filosofía de reutilizar, reducir y reciclar. Cada pieza personalizada es una oportunidad para crear algo verdaderamente único y significativo.</p>
             </div>
             <div class="contact-info" style="background-color: rgba(255, 255, 255, 0.15); padding: 30px; border-radius: 10px; backdrop-filter: blur(5px);">
-                <h3 style="color: #f8f9fa; font-size: 1.8rem; margin-bottom: 20px; text-align: center;" data-i18n="contact.title">Contáctanos para personalizar</h3>
+                <h3 style="color: #f8f9fa; font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Contáctanos para personalizar</h3>
                 <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
                     <p style="color: #f8f9fa; font-size: 1.2rem;"><i class="fas fa-envelope" style="margin-right: 10px; color: #f8f9fa;"></i> pua@laboratoriotextil.com</p>
                     <p style="color: #f8f9fa; font-size: 1.2rem;"><i class="fas fa-phone" style="margin-right: 10px; color: #f8f9fa;"></i> +56 9 6373 2829</p>
                     <p style="color: #f8f9fa; font-size: 1.2rem;"><i class="fab fa-instagram" style="margin-right: 10px; color: #f8f9fa;"></i> @pua_disenos</p>
-                    <p data-i18n-html="contact.wholesale" style="color: #f8f9fa; font-size: 1.2rem; text-align: center; margin-top: 10px;"></p>
+                    <p style="color: #f8f9fa; font-size: 1.2rem; text-align: center; margin-top: 10px;">
+                        Para peticiones al por mayor, envíanos un correo a <a href="mailto:pua@laboratoriotextil.com" style="color: #f8f9fa; text-decoration: underline;">pua@laboratoriotextil.com</a> y te enviaremos un presupuesto.
+                    </p>
                 </div>
             </div>
         </div>
@@ -91,18 +85,18 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>PUA</h3>
-                    <p data-i18n="footer.tagline">Diseño textil infantil sostenible</p>
-                    <p data-i18n="footer.location">Valparaíso, Chile</p>
+                    <p>Diseño textil infantil sostenible</p>
+                    <p>Valparaíso, Chile</p>
                 </div>
                 <div class="footer-section">
-                    <h3 data-i18n="footer.links">Enlaces</h3>
-                    <a href="polerones.html" data-i18n="nav.polerones">Polerones</a>
-                    <a href="frajacket.html" data-i18n="nav.frajacket">Frajacket</a>
-                    <a href="accesorios.html" data-i18n="nav.accesorios">Accesorios</a>
-                    <a href="hogar.html" data-i18n="nav.hogar">Hogar</a>
+                    <h3>Enlaces</h3>
+                    <a href="polerones.html">Polerones</a>
+                    <a href="frajacket.html">Frajacket</a>
+                    <a href="accesorios.html">Accesorios</a>
+                    <a href="hogar.html">Hogar</a>
                 </div>
                 <div class="footer-section">
-                    <h3 data-i18n="footer.follow_us">Síguenos</h3>
+                    <h3>Síguenos</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/pua_disenos/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -110,7 +104,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p data-i18n="footer.copyright">© 2025 PUA - Todos los derechos reservados</p>
+                <p>&copy; 2025 PUA - Todos los derechos reservados</p>
             </div>
         </div>
     </footer>

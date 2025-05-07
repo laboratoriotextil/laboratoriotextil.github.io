@@ -6,27 +6,21 @@ document.write('<script src="js/data/colets.js"></script>');
 document.write('<script src="js/data/frajackets.js"></script>');
 document.write('<script src="js/data/hogar.js"></script>');
 
-// Initialize application once DOM is ready or i18n is initialized
-function initializeApp() {
-  // Navegación móvil
-  const navToggle = document.querySelector('.nav-toggle');
-  if (navToggle) {
-    navToggle.addEventListener('click', function() {
-      document.querySelector('nav ul').classList.toggle('show');
-    });
-  }
-  // Filtrado de productos (para futuras implementaciones)
-  setupProductFilters();
-  // Inicializar visualización de productos
-  loadProducts();
-}
-// If i18next is available, wait until it's initialized or language changes
-if (window.i18next) {
-  i18next.on('initialized', initializeApp);
-  i18next.on('languageChanged', initializeApp);
-} else {
-  document.addEventListener('DOMContentLoaded', initializeApp);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Navegación móvil
+    const navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    }
+
+    // Filtrado de productos (para futuras implementaciones)
+    setupProductFilters();
+    
+    // Inicializar visualización de productos
+    loadProducts();
+});
 
 // Función para cargar productos desde los datos embebidos
 function loadProducts() {
@@ -55,9 +49,7 @@ function loadProducts() {
             productContainer.appendChild(productCard);
         });
     } else {
-        // Show translated message if available
-        const msg = (window.i18next ? i18next.t('product.none_found') : 'No se encontraron productos.');
-        productContainer.innerHTML = `<p>${msg}</p>`;
+        productContainer.innerHTML = '<p>No se encontraron productos.</p>';
     }
 }
 
@@ -67,20 +59,12 @@ function createProductCard(product) {
     card.className = 'product-card';
     
     const stockClass = product.in_stock ? '' : 'out-of-stock';
-    // Translated stock text
-    const stockKey = product.in_stock ? 'product.in_stock' : 'product.out_of_stock';
-    const stockText = (window.i18next ? i18next.t(stockKey) : (product.in_stock ? 'En stock' : 'Agotado'));
+    const stockText = product.in_stock ? 'En stock' : 'Agotado';
     
     // Formatear precio en pesos chilenos
-    // Format price per locale and currency: CLP for Spanish/Chile, CHF for Italian/Switzerland
-    let locale = 'es-CL', currency = 'CLP';
-    if (window.i18next && i18next.language === 'it') {
-        locale = 'it-CH';
-        currency = 'CHF';
-    }
-    const formattedPrice = new Intl.NumberFormat(locale, {
+    const formattedPrice = new Intl.NumberFormat('es-CL', {
         style: 'currency',
-        currency: currency
+        currency: 'CLP'
     }).format(product.price);
     
     // Crear galería de imágenes si hay múltiples, o mostrar una sola imagen
@@ -106,8 +90,6 @@ function createProductCard(product) {
         imageHTML = `<img src="${imageSrc}" alt="${product.name}" class="product-image">`;
     }
     
-    // Translated materials title
-    const materialsTitle = (window.i18next ? i18next.t('product.materials_title') : 'Materiales');
     card.innerHTML = `
         ${imageHTML}
         <div class="product-info">
@@ -115,8 +97,9 @@ function createProductCard(product) {
             <p class="product-price">${formattedPrice}</p>
             <p class="product-description">${product.description}</p>
             <p class="${stockClass}">${stockText}</p>
+            
             <div class="product-details">
-                <h4>${materialsTitle}</h4>
+                <h4>Materiales:</h4>
                 <p>${product.materials}</p>
             </div>
         </div>
