@@ -49,6 +49,6 @@ git push github main             # publica en www.laboratoriotextil.com
 
 ## Estado
 
-- Listo para publicar; el sitio anterior (la tienda de PUA) vive ahora en puatextil.com.
+- En vivo en www.laboratoriotextil.com (2026-10-08). El sitio anterior, la tienda de PUA, vive en puatextil.com.
 - Falta confirmar con Natalia las edades, horarios, valor y lugar, para sumarlos.
-- Los videos todavía muestran la marca anterior (aguja con hebra).
+- Los dos videos abren y cierran con el logo «Botón con aguja».
