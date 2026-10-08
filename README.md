@@ -1,126 +1,54 @@
-# PUA - Sitio Web
+# laboratoriotextil.com
 
-Este repositorio contiene el sitio web de PUA, una marca de diseño textil infantil sostenible que se enfoca en reutilizar, reducir y reciclar materiales textiles para crear productos únicos y de calidad.
+Sitio público de **Laboratorio Textil**, el taller textil de Natalia: el curso de costura básico
+«Lo hice yo» (cuatro clases, con su video), los talleres de costura para niñas y niños (con su video y
+fotos), qué hace el taller y un formulario de inscripción. Una sola página, en español de Chile, con la
+marca «Botón con aguja».
 
-## Estructura del Sitio
+## Archivos
 
-- `index.html` - Página principal con la filosofía de PUA
-- `polerones.html` - Página de polerones
-- `colets.html` - Página de colets y accesorios
-- `css/` - Estilos del sitio
-- `js/` - Scripts de JavaScript
-- `images/` - Imágenes del sitio
-- `products/` - Datos de productos en formato JSON
-
-## Sistema de Gestión de Productos
-
-El sitio utiliza un sistema simple basado en archivos JSON para gestionar los productos. Esto permite agregar, modificar o eliminar productos fácilmente sin necesidad de modificar el código HTML.
-
-### Estructura de Archivos de Productos
-
-Los productos están organizados en las siguientes carpetas:
-
-- `products/polerones/products.json` - Datos de polerones
-- `products/colets/products.json` - Datos de colets y accesorios
-
-### Cómo Agregar Nuevos Productos
-
-Para agregar un nuevo producto, sigue estos pasos:
-
-1. Guarda la imagen del producto en la carpeta `images/`
-2. Abre el archivo JSON correspondiente (`products/polerones/products.json` o `products/colets/products.json`)
-3. Agrega un nuevo objeto JSON con la siguiente estructura:
-
-```json
-{
-  "id": "producto-nuevo",
-  "name": "Nombre del Producto",
-  "description": "Descripción detallada del producto",
-  "price": 30000,
-  "image": "/images/nombre-imagen.png",
-  "materials": ["Material 1", "Material 2", "Material 3"],
-  "workHours": 8,
-  "stock": 5
-}
+```
+index.html            la página
+assets/styles.css     estilos: paleta y tipografía de la marca, diseño para computador y teléfono
+assets/app.js         el formulario de inscripción
+assets/img/           logo (botón con aguja, normal y negativo, PNG 512), fotos del taller, portadas de video
+assets/video/         lo-hice-yo.mp4 (61 s) y talleres-ninas-ninos.mp4 (29 s), versiones de 720 px
+assets/fonts/         IBM Plex Sans 400/500/600 e IBM Plex Mono 500
+favicon.svg, apple-touch-icon.png
+CNAME                 www.laboratoriotextil.com (GitHub Pages)
 ```
 
-4. Guarda el archivo JSON
+De dónde sale cada cosa:
 
-### Estructura de Datos de Productos
+- **Logo:** `~/System/WhiteBox/estudio/marca-laboratoriotextil/exploracion/logo-boton-aguja.svg`.
+- **Fotos:** `~/System/WhiteBox/proyectos/laboratoriotextil/media/2026-10-taller-costura/`, reducidas a
+  1000 px. Ninguna muestra la cara de un menor: la 06 está recortada para dejar solo a la niña de espaldas.
+- **Videos:** las copias para la intranet de `~/Documents/videos/lt-lo-hice-yo` y `lt-taller-promo`
+  (`~/System/WhiteBox/galerias/salida/video/`).
+- **Texto del curso:** el programa de Natalia (`proyectos/laboratoriotextil/talleres/lo-hice-yo-programa.md`),
+  corregido. El sitio no da edades, horarios, precios ni dirección: están por confirmar con ella.
 
-Cada producto debe tener los siguientes campos:
+## Inscripciones
 
-- `id` (string): Identificador único del producto
-- `name` (string): Nombre del producto
-- `description` (string): Descripción detallada
-- `price` (number): Precio en pesos chilenos (sin puntos ni símbolos)
-- `image` (string): Ruta a la imagen del producto (desde la raíz del sitio)
-- `materials` (array): Lista de materiales utilizados
-- `workHours` (number): Horas de trabajo aproximadas
-- `stock` (number): Cantidad disponible (0 para productos agotados)
+El formulario envía a `https://app.laboratoriotextil.com/api/inscripciones`, el servidor del taller en
+whitebox (`proyectos/laboratoriotextil/platform/server.py`), que acepta ese origen por CORS, limita a
+5 envíos por hora por IP, descarta lo que llena el campo trampa y guarda en
+`platform/data/inscripciones.json`. Natalia las ve y les cambia el estado (nueva, contactada, inscrita,
+descartada) en la intranet, botón **INSCRIPCIONES** (puatextil.com/intranet o app.laboratoriotextil.com).
 
-### Ejemplo
+## Publicar
 
-```json
-{
-  "id": "poleron-geometrico",
-  "name": "Poleron Geométrico Verde",
-  "description": "Poleron infantil verde con aplicación geométrica multicolor.",
-  "price": 33500,
-  "image": "/images/poleron-geometrico.png",
-  "materials": ["Felpa de algodón reciclado", "Telas estampadas recuperadas", "Ribetes elásticos reciclados"],
-  "workHours": 8,
-  "stock": 2
-}
+GitHub Pages sirve el sitio desde `laboratoriotextil/laboratoriotextil.github.io` (remoto `github`);
+publicar es hacer push a su `main`. El código vive en `forge:pancho/laboratoriotextil` (remoto `origin`).
+
+```sh
+python3 -m http.server 8800      # ver en local: http://localhost:8800 (el servidor del taller acepta ese origen)
+git push origin main             # forge
+git push github main             # publica en www.laboratoriotextil.com
 ```
 
-## Cómo Marcar Productos como Agotados
+## Estado
 
-Para marcar un producto como agotado, simplemente cambia el valor de `stock` a `0` en el archivo JSON correspondiente. El sitio automáticamente mostrará el producto como "Agotado".
-
-## Cómo Actualizar Precios
-
-Para actualizar el precio de un producto, modifica el valor del campo `price` en el archivo JSON correspondiente. El precio debe ser un número entero en pesos chilenos (sin puntos ni símbolos).
-
-## Automatización con Python
-
-Hemos creado herramientas en Python para agilizar la adición de nuevos productos a la web.
-
-### Requisitos
-- Python 3.7 o superior
-- Variables de entorno: `OPENAI_API_KEY` (tu clave de OpenAI)
-
-### Script de línea de comandos
-El archivo `add_product.py` automatiza el flujo completo:
-1. Copia tu imagen fuente a `images/`
-2. Genera una versión de estudio vía la API de OpenAI
-3. Genera en español una descripción persuasiva
-4. Actualiza el archivo de datos JS correspondiente en `js/data/` con el nuevo producto
-5. Deja las imágenes y el JS listos y staged para commit
-
-Ejemplo de uso:
-```bash
-export OPENAI_API_KEY="sk-..."
-pip install openai requests
-./add_product.py \
-  --type polerones \
-  --name "Polerón Sol" \
-  --price 29900 \
-  --materials "Algodón reciclado, ribetes elásticos" \
-  --labor 5 \
-  --in-stock \
-  --image path/to/source.png
-```
-
-### Aplicación Streamlit
-Para una interfaz gráfica más intuitiva, usa la app Streamlit:
-1. Instala dependencias:
-   ```bash
-   pip install streamlit openai requests
-   ```
-2. Ejecuta la app:
-   ```bash
-   streamlit run streamlit_app.py
-   ```
-La interfaz te guiará para subir la imagen, completar datos, generar descriptión y previsualizar antes de actualizar el sitio.
-
+- En vivo en www.laboratoriotextil.com (2026-10-08). El sitio anterior, la tienda de PUA, vive en puatextil.com.
+- Falta confirmar con Natalia las edades, horarios, valor y lugar, para sumarlos.
+- Los dos videos abren y cierran con el logo «Botón con aguja».

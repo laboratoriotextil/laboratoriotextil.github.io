@@ -1,0 +1,116 @@
+/* Laboratorio Textil — paleta y tipografía de la marca «Botón con aguja»:
+   blanco tela, negro, verde jardín, verde claro, sombra; IBM Plex Sans y Mono. */
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); }
+
+:root {
+  --tela: #F4F4F1;
+  --negro: #1F1B17;
+  --verde: #5E7224;
+  --verde-oscuro: #4B5B1D;
+  --verde-claro: #B7BE7A;
+  --sombra: #DEDDD6;
+  --tono: #EBEBE4;
+  --texto-suave: #4A453F;
+  --error: #9B2C1F;
+  --ancho: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--tela); color: var(--negro); font: 400 17px/1.6 'IBM Plex Sans', system-ui, sans-serif; overflow-x: hidden; }
+img, video { max-width: 100%; display: block; }
+a { color: var(--verde-oscuro); }
+.ancho { max-width: var(--ancho); margin: 0 auto; padding: 0 20px; }
+
+.etiqueta { font: 500 12px/1.4 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--verde-oscuro); margin: 0 0 12px; }
+h1, h2, h3 { font-weight: 600; line-height: 1.12; margin: 0; letter-spacing: -.01em; }
+h1 { font-size: clamp(38px, 6vw, 64px); }
+h2 { font-size: clamp(30px, 4.4vw, 44px); margin-bottom: 14px; }
+h3 { font-size: 19px; margin-bottom: 6px; }
+.bajada { font-size: clamp(17px, 2vw, 20px); color: var(--texto-suave); max-width: 56ch; margin: 16px 0 26px; }
+
+.boton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--negro); color: var(--tela); border: 2px solid var(--negro); border-radius: 999px; padding: 13px 24px; font: 600 16px/1 'IBM Plex Sans', sans-serif; text-decoration: none; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.boton:hover { background: var(--verde); border-color: var(--verde); }
+.boton:focus-visible, .menu a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--verde-claro); outline-offset: 2px; }
+.boton-linea { background: transparent; color: var(--negro); }
+.boton-linea:hover { background: var(--negro); color: var(--tela); border-color: var(--negro); }
+.boton-chico { padding: 9px 16px; font-size: 15px; }
+.boton:disabled { opacity: .55; cursor: wait; }
+
+/* Cabecera */
+.cabecera { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--tela) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--sombra); }
+.cabecera-fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marca { display: flex; align-items: center; gap: 10px; color: var(--negro); text-decoration: none; font-weight: 600; font-size: 18px; }
+.menu { display: flex; align-items: center; gap: 22px; }
+.menu a:not(.boton) { color: var(--negro); text-decoration: none; font-size: 15px; font-weight: 500; }
+.menu a:not(.boton):hover { color: var(--verde); }
+
+/* Portada */
+.portada { padding: 72px 0 64px; }
+.portada-fila { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 40px; }
+.portada-logo img { width: 100%; max-width: 360px; height: auto; margin-left: auto; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Secciones */
+.seccion { padding: 80px 0; border-top: 1px solid var(--sombra); }
+.seccion-tono { background: var(--tono); }
+.dos-columnas { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: start; }
+.dos-columnas-inversa { grid-template-columns: .8fr 1.2fr; align-items: center; }
+
+.clases { list-style: none; padding: 0; margin: 8px 0 30px; display: grid; gap: 4px; }
+.clases li { display: grid; grid-template-columns: 52px 1fr; gap: 6px; padding: 16px 0; border-top: 1px solid var(--sombra); }
+.clases li:last-child { border-bottom: 1px solid var(--sombra); }
+.clase-n { font: 500 15px/1.6 'IBM Plex Mono', monospace; color: var(--verde); padding-top: 1px; }
+.clases p { margin: 0; color: var(--texto-suave); font-size: 16px; }
+
+.video { margin: 0; }
+.video video { width: 100%; max-width: 360px; aspect-ratio: 9 / 16; height: auto; background: var(--negro); border-radius: 14px; margin: 0 auto; }
+.video figcaption { text-align: center; font-size: 14px; color: var(--texto-suave); margin-top: 10px; }
+
+.galeria { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 56px; }
+.galeria img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; }
+
+.tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 18px; }
+.tres > div { border-top: 3px solid var(--verde); padding-top: 16px; }
+.tres p { margin: 0; color: var(--texto-suave); }
+
+/* Formulario */
+.formulario { display: grid; gap: 6px; background: var(--tela); border: 1px solid var(--sombra); border-radius: 16px; padding: 24px; }
+.formulario label { font-weight: 500; font-size: 15px; margin-top: 10px; }
+.formulario label:first-child { margin-top: 0; }
+.opcional { font-weight: 400; color: var(--texto-suave); }
+.formulario input, .formulario select, .formulario textarea { font: inherit; font-size: 16px; color: var(--negro); background: #fff; border: 1px solid #C9C8BF; border-radius: 10px; padding: 11px 12px; width: 100%; }
+.formulario textarea { resize: vertical; }
+.formulario .boton { margin-top: 16px; justify-self: start; }
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.estado { margin: 6px 0 0; min-height: 1.5em; font-size: 15px; }
+.estado-ok { color: var(--verde-oscuro); font-weight: 500; }
+.estado-error { color: var(--error); }
+
+/* Pie */
+.pie { background: var(--negro); color: var(--tela); padding: 36px 0; }
+.pie-fila { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.pie-marca { display: flex; align-items: center; gap: 12px; font-size: 15px; }
+.pie-marca img { background: var(--tela); border-radius: 50%; padding: 3px; }
+.pie-marca span { color: var(--sombra); }
+.pie-enlaces { display: flex; flex-wrap: wrap; gap: 18px; }
+.pie-enlaces a { color: var(--verde-claro); font-size: 15px; }
+
+/* Teléfono */
+@media (max-width: 860px) {
+  .menu a:not(.boton) { display: none; }
+  .portada { padding: 44px 0 40px; }
+  .portada-fila, .dos-columnas, .dos-columnas-inversa { grid-template-columns: 1fr; gap: 32px; }
+  .portada-logo { order: -1; }
+  .portada-logo img { max-width: 150px; margin: 0; }
+  .dos-columnas-inversa .video { order: 2; }
+  .seccion { padding: 56px 0; }
+  .galeria { grid-template-columns: repeat(2, 1fr); margin-top: 36px; }
+  .galeria img:last-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .tres { grid-template-columns: 1fr; gap: 20px; }
+  .formulario { padding: 18px; }
+}
