@@ -80,6 +80,5 @@ git push github main             # publica en www.laboratoriotextil.com
 
 ## Estado
 
-- En vivo en www.laboratoriotextil.com la versión de una página con el curso; la versión de tres páginas
-  está en `main` del forge, por publicar.
+- En vivo en www.laboratoriotextil.com (tres páginas, 2026-10-25).
 - Falta confirmar con Natalia las edades, horarios, valor y lugar, para sumarlos.
