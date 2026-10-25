@@ -1,0 +1,92 @@
+{{cabeza}}
+{{cabecera}}
+<main>
+
+  <section class="escaneo-seccion" aria-labelledby="t-produccion">
+    <div class="contenedor">
+      <div class="escaneo esquinas" id="escaneo" aria-label="Prendas del taller: blancas con el logo de su marca a un lado de la línea, en puntos al otro">
+        <div class="escaneo-capa verde" aria-hidden="true"><div class="escaneo-pista">{{prendas:-teal}}{{prendas:-teal}}</div></div>
+        <div class="escaneo-capa blanca"><div class="escaneo-pista">{{prendas:}}{{prendas:}}</div></div>
+        <i class="escaneo-linea" id="escaneo-linea" role="slider" tabindex="0" aria-label="Mover la línea" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></i>
+      </div>
+      <div class="escaneo-texto">
+        <p class="t-h3" data-rev>Taller textil</p>
+        <h1 class="t-h2 acento" id="t-produccion" data-lineas>Producción, Gestión, Diseño</h1>
+        <p data-rev>Laboratorio Textil es el taller de Natalia. Diseñamos, cortamos y cosemos prendas y piezas a medida, y llevamos cada encargo de principio a fin, de una pieza a una serie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion borde-arriba" aria-labelledby="t-ciencia">
+    <div class="contenedor dos">
+      <div class="dos-texto">
+        <p class="t-etiqueta" data-rev>El taller</p>
+        <h2 class="t-h2" id="t-ciencia" data-lineas>Donde la costura se vuelve <span class="acento">ciencia</span></h2>
+        <p class="t-suave" data-rev>Para nosotros, ciencia quiere decir medir, probar y repetir: tomar medidas, hacer el molde, probar la tela, corregir y volver a coser. Así trabajamos cada prenda, y así lo enseñamos en nuestras clases de costura.</p>
+        <a class="boton" href="/cursos/#inscripcion" data-rev><span class="boton-txt"><span>Escríbenos</span><span aria-hidden="true">Escríbenos</span></span></a>
+      </div>
+      <div class="dos-foto esquinas" data-rev><img src="/assets/img/06-nina-cosiendo-taller.jpg" alt="Una niña, de espaldas, cose en una máquina frente a la ventana del taller" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="seccion borde-arriba" aria-labelledby="t-oficios">
+    <div class="contenedor">
+      <div class="oficios-cabeza">
+        <p class="t-etiqueta" data-rev>Qué hacemos</p>
+        <h2 class="t-h2" id="t-oficios" data-lineas><span class="acento">Tres oficios</span> y capacitación</h2>
+        <a class="boton" href="/cursos/" data-rev><span class="boton-txt"><span>Conoce los cursos</span><span aria-hidden="true">Conoce los cursos</span></span></a>
+      </div>
+      <div class="oficios">
+        <div class="oficio" data-rev>{{icono:produccion}}<h3>Producción</h3><p>Cortamos y cosemos prendas y piezas a medida: polerones, poleras, pantalones y buzos, una pieza o una serie.</p></div>
+        <div class="oficio" data-rev style="--d:.1s">{{icono:gestion}}<h3>Gestión</h3><p>Llevamos cada encargo de principio a fin: la tela y los insumos, el molde, los tiempos y la entrega.</p></div>
+        <div class="oficio" data-rev>{{icono:diseno}}<h3>Diseño</h3><p>Del dibujo al molde: tomamos medidas, hacemos el molde y probamos la tela antes de coser.</p></div>
+        <div class="oficio" data-rev style="--d:.1s">{{icono:clases}}<h3>Capacitación</h3><p>Para todas las edades y escalas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion borde-arriba" aria-labelledby="t-proceso">
+    <div class="contenedor">
+      <div class="proceso-cabeza">
+        <p class="t-etiqueta" data-rev>Cómo trabajamos</p>
+        <h2 class="t-h2" id="t-proceso" data-lineas>De la medida a la prenda, <span class="acento">paso a paso</span></h2>
+        <p data-rev>Cada prenda pasa por las mismas cuatro estaciones del taller. Medimos, probamos y repetimos hasta que queda como tiene que quedar.</p>
+      </div>
+      <div class="carrusel" id="carrusel" aria-roledescription="carrusel">
+        <div class="carrusel-pista">{{pasos}}</div>
+        <div class="carrusel-regla" aria-hidden="true"><i></i></div>
+        <div class="carrusel-pie">
+          <button class="carrusel-flecha" type="button" data-mover="-1" aria-label="Paso anterior"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <div aria-live="polite"><h3 id="paso-titulo">Medidas y molde</h3><p id="paso-texto">Tomamos medidas y dibujamos el molde de cada pieza, para que la prenda calce desde el primer corte.</p></div>
+          <button class="carrusel-flecha" type="button" data-mover="1" aria-label="Paso siguiente"><svg viewBox="0 0 16 16" fill="none"><path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion borde-arriba" aria-labelledby="t-diferencia">
+    <div class="contenedor">
+      <p class="t-etiqueta" data-rev>La diferencia</p>
+      <h2 class="tabla-cabeza t-h2" id="t-diferencia" data-lineas><span class="acento">Hecho a medida,</span> no en serie</h2>
+      <div class="tabla" role="table" aria-label="A medida frente a confección en serie">
+        <div class="tabla-fila" role="row"><span role="columnheader"></span><span role="columnheader">Laboratorio Textil</span><span role="columnheader">Confección en serie</span></div>
+        <div class="tabla-fila" role="row" data-rev><span class="tabla-dato" role="rowheader">{{compara:medidas}}Medidas</span><span class="tabla-si" role="cell">{{si}}Las tuyas, tomadas en el taller</span><span class="tabla-no" role="cell">{{no}}Tallas estándar</span></div>
+        <div class="tabla-fila" role="row" data-rev><span class="tabla-dato" role="rowheader">{{compara:cantidad}}Cantidad</span><span class="tabla-si" role="cell">{{si}}Desde una pieza</span><span class="tabla-no" role="cell">{{no}}Pedidos mínimos grandes</span></div>
+        <div class="tabla-fila" role="row" data-rev><span class="tabla-dato" role="rowheader">{{compara:conquien}}Con quién hablas</span><span class="tabla-si" role="cell">{{si}}Con quien corta y cose tu prenda</span><span class="tabla-no" role="cell">{{no}}Con intermediarios</span></div>
+        <div class="tabla-fila" role="row" data-rev><span class="tabla-dato" role="rowheader">{{compara:cambios}}Cambios</span><span class="tabla-si" role="cell">{{si}}Se corrigen en la prueba</span><span class="tabla-no" role="cell">{{no}}Difíciles una vez en producción</span></div>
+      </div>
+    </div>
+  </section>
+
+  {{llamado}}
+
+</main>
+{{pie}}
+<script src="/assets/lib/gsap.min.js"></script>
+<script src="/assets/lib/ScrollTrigger.min.js"></script>
+<script src="/assets/lib/SplitText.min.js"></script>
+<script src="/assets/lib/lenis.min.js"></script>
+<script src="/assets/sitio.js"></script>
+<script src="/assets/produccion.js"></script>
+</body>
+</html>

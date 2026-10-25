@@ -1,21 +1,48 @@
 # laboratoriotextil.com
 
-Sitio público de **Laboratorio Textil**, el taller textil de Natalia: el curso de costura básico
-«Lo hice yo» (cuatro clases, con su video), los talleres de costura para niñas y niños (con su video y
-fotos), qué hace el taller y un formulario de inscripción. Una sola página, en español de Chile, con la
-marca «Botón con aguja».
+Sitio público de **Laboratorio Textil**, el taller textil de Natalia: producción, gestión y diseño de
+prendas y piezas a medida, y capacitación para todas las edades y escalas. Tres páginas en español de
+Chile, fondo oscuro con acento verde azulado (#00a19d), tipografía Inter, la marca «Botón con aguja».
+
+| Página | Qué tiene |
+|---|---|
+| `/` | Portada con una tela en puntos (canvas), el taller, la escena «Un taller de …» que cambia con el scroll, el desafío de la industria (acordeón con cifras y su fuente), el polerón que pasa de trama a imagen, «Hecho en Chile» con el globo, cifras del taller, enlaces a los videos |
+| `/produccion/` | Prendas del taller que cruzan una línea (blancas a un lado, en puntos al otro; la línea se arrastra), los tres oficios y capacitación, el proceso en cuatro estaciones con dibujos animados, la tabla «a medida / en serie» |
+| `/cursos/` | «Lo hice yo» (cuatro clases y su video), talleres para niñas y niños (video y fotos), el taller y PUA, el formulario de inscripción |
+
+Todos los «Escríbenos» llevan a `/cursos/#inscripcion`.
+
+## Cómo se arma
+
+Las páginas se escriben en `fuente/` y se arman con un programa, sin dependencias:
+
+```sh
+python3 herramientas/armar.py    # escribe index.html, produccion/index.html, cursos/index.html
+```
+
+- `fuente/cabeza.html`, `cabecera.html`, `pie.html`: piezas comunes. `fuente/inicio.html`,
+  `produccion.html`, `cursos.html`: cada página, con marcadores `{{…}}` que `armar.py` reemplaza
+  (piezas comunes, íconos, las estaciones del proceso, las prendas).
+- `herramientas/dibujos.py`: los dibujos de línea (las capas de cada estación del proceso y los
+  íconos), en SVG.
+- Las páginas armadas se versionan, porque GitHub Pages las sirve tal cual. Se edita `fuente/` y se vuelve
+  a armar; no se editan los `index.html` a mano.
 
 ## Archivos
 
 ```
-index.html            la página
-assets/styles.css     estilos: paleta y tipografía de la marca, diseño para computador y teléfono
-assets/app.js         el formulario de inscripción
-assets/img/           logo (botón con aguja, normal y negativo, PNG 512), fotos del taller, portadas de video
-assets/video/         lo-hice-yo.mp4 (61 s) y talleres-ninas-ninos.mp4 (29 s), versiones de 720 px
-assets/fonts/         IBM Plex Sans 400/500/600 e IBM Plex Mono 500
-favicon.svg, apple-touch-icon.png
-CNAME                 www.laboratoriotextil.com (GitHub Pages)
+assets/sitio.css        estilos de las tres páginas (medida fluida: 1rem = ancho/172,8 en computador)
+assets/sitio.js         lo común: desplazamiento suave, cabecera, menú del teléfono, entradas, cintas
+assets/inicio.js        la tela de la portada, la escena, el acordeón, el polerón, el globo
+assets/produccion.js    la línea de las prendas y el carrusel del proceso
+assets/app.js           el formulario de inscripción
+assets/lib/             GSAP 3.13 con ScrollTrigger y SplitText (licencia estándar gratuita, uso comercial
+                        permitido) y Lenis 1.3.4 (MIT, LICENSE-lenis.txt)
+assets/fonts/           Inter 300/400/500 (OFL, OFL-Inter.txt)
+assets/img/             logo, fotos del taller, portadas de video, prendas/ (20 prendas, blancas y en trama),
+                        mapas/ (globo y acercamiento de Chile), marcas/ (logos blancos de las marcas)
+assets/video/           lo-hice-yo.mp4, talleres-ninas-ninos.mp4, poleron-giro.{mp4,webm,jpg}
+favicon.svg, apple-touch-icon.png, CNAME
 ```
 
 De dónde sale cada cosa:
@@ -23,10 +50,14 @@ De dónde sale cada cosa:
 - **Logo:** `~/System/WhiteBox/estudio/marca-laboratoriotextil/exploracion/logo-boton-aguja.svg`.
 - **Fotos:** `~/System/WhiteBox/proyectos/laboratoriotextil/media/2026-10-taller-costura/`, reducidas a
   1000 px. Ninguna muestra la cara de un menor: la 06 está recortada para dejar solo a la niña de espaldas.
-- **Videos:** las copias para la intranet de `~/Documents/videos/lt-lo-hice-yo` y `lt-taller-promo`
-  (`~/System/WhiteBox/galerias/salida/video/`).
-- **Texto del curso:** el programa de Natalia (`proyectos/laboratoriotextil/talleres/lo-hice-yo-programa.md`),
-  corregido. El sitio no da edades, horarios, precios ni dirección: están por confirmar con ella.
+- **Videos del curso:** las copias para la intranet de `~/Documents/videos/lt-lo-hice-yo` y
+  `lt-taller-promo` (`~/System/WhiteBox/galerias/salida/video/`).
+- **Prendas, polerón que gira, globos y logos de marcas:** el proyecto de prendas
+  (`~/System/WhiteBox/estudio/prendas`, `forge:pancho/prendas`), imágenes hechas con modelos locales
+  de pesos abiertos, y `scripts/activos.py` del estudio `forge:pancho/laboratoriotextil-produccion`.
+- **Texto del curso:** el programa de Natalia (`proyectos/laboratoriotextil/talleres/lo-hice-yo-programa.md`).
+  El sitio no da edades, horarios, precios ni dirección: están por confirmar con ella.
+- **Cifras de la industria** (portada, «El desafío»): cada una lleva su fuente y año en el texto.
 
 ## Inscripciones
 
@@ -49,6 +80,6 @@ git push github main             # publica en www.laboratoriotextil.com
 
 ## Estado
 
-- En vivo en www.laboratoriotextil.com (2026-10-08). El sitio anterior, la tienda de PUA, vive en puatextil.com.
+- En vivo en www.laboratoriotextil.com la versión de una página con el curso; la versión de tres páginas
+  está en `main` del forge, por publicar.
 - Falta confirmar con Natalia las edades, horarios, valor y lugar, para sumarlos.
-- Los dos videos abren y cierran con el logo «Botón con aguja».

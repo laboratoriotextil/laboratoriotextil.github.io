@@ -3,182 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laboratorio Textil · Taller de costura</title>
-<meta name="description" content="Taller textil: «Lo hice yo», el curso de costura básico en cuatro clases, talleres de costura para niñas y niños, y prendas y piezas a medida.">
-<meta property="og:title" content="Laboratorio Textil · Taller de costura">
-<meta property="og:description" content="Donde la costura se vuelve ciencia. «Lo hice yo», el curso de costura básico en cuatro clases.">
+<title>Laboratorio Textil · Taller textil a medida</title>
+<meta name="description" content="Laboratorio Textil es el taller textil de Natalia: producción, gestión y diseño de prendas y piezas a medida, y capacitación para todas las edades y escalas.">
+<meta property="og:title" content="Laboratorio Textil · Taller textil a medida">
+<meta property="og:description" content="Laboratorio Textil es el taller textil de Natalia: producción, gestión y diseño de prendas y piezas a medida, y capacitación para todas las edades y escalas.">
 <meta property="og:image" content="https://www.laboratoriotextil.com/assets/img/logo-512.png">
 <meta property="og:url" content="https://www.laboratoriotextil.com/">
-<meta name="theme-color" content="#F4F4F1">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/sitio.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<header class="cabecera">
-  <div class="ancho cabecera-fila">
-    <a class="marca" href="#inicio" aria-label="Laboratorio Textil, inicio">
-      <img src="assets/img/logo.svg" alt="" width="44" height="44">
+<header class="cabecera" id="cabecera">
+  <div class="cabecera-fila">
+    <a class="marca" href="/" aria-label="Laboratorio Textil, inicio">
+      <img src="/assets/img/logo-negativo.svg" alt="" width="40" height="40">
       <span>Laboratorio Textil</span>
     </a>
-    <nav class="menu" aria-label="Secciones">
-      <a href="#lo-hice-yo">El curso</a>
-      <a href="#ninas-ninos">Niñas y niños</a>
-      <a href="#taller">El taller</a>
-      <a class="boton boton-chico" href="#inscripcion">Inscríbete</a>
+    <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir el menú"><span></span><span></span></button>
+    <nav class="menu puntos" id="menu" aria-label="Páginas">
+      <a href="/" aria-current="page">Inicio</a>
+      <a href="/produccion/" >Producción</a>
+      <a href="/cursos/" >Cursos</a>
+      <a class="boton" href="/cursos/#inscripcion"><span class="boton-txt"><span>Escríbenos</span><span aria-hidden="true">Escríbenos</span></span></a>
     </nav>
   </div>
 </header>
 
-<main id="inicio">
+<main>
 
-  <section class="portada">
-    <div class="ancho portada-fila">
-      <div class="portada-texto">
-        <p class="etiqueta">Taller textil · Producción · Gestión · Diseño</p>
-        <h1>Donde la costura se vuelve ciencia.</h1>
-        <p class="bajada">Medir, probar y repetir hasta que la prenda quede bien. Enseñamos a coser desde cero, con talleres para niñas y niños, y hacemos prendas y piezas a medida.</p>
-        <div class="acciones">
-          <a class="boton" href="#inscripcion">Inscríbete en «Lo hice yo»</a>
-          <a class="boton boton-linea" href="#lo-hice-yo">Ver el curso</a>
-        </div>
-      </div>
-      <div class="portada-logo">
-        <img src="assets/img/logo.svg" alt="Logo de Laboratorio Textil: un botón de cuatro ojales cosido en equis con hilo verde y una aguja" width="360" height="360">
-      </div>
-    </div>
-  </section>
-
-  <section class="seccion" id="lo-hice-yo" aria-labelledby="t-curso">
-    <div class="ancho dos-columnas">
-      <div>
-        <p class="etiqueta">Curso de costura básico</p>
-        <h2 id="t-curso">«Lo hice yo»</h2>
-        <p class="bajada">Cuatro clases para aprender a coser desde cero, sin ningún conocimiento previo. Al final te llevas tu primer producto, hecho por ti.</p>
-        <ol class="clases">
-          <li>
-            <span class="clase-n">01</span>
-            <div><h3>La máquina</h3>
-            <p>Cómo enhebrarla, qué hace cada función, cómo arreglarla si no funciona, limpiarla y aceitarla. Las puntadas, los prensatelas y para qué sirve cada aguja.</p></div>
-          </li>
-          <li>
-            <span class="clase-n">02</span>
-            <div><h3>Práctica</h3>
-            <p>Puntadas sobre tela para soltar la mano, dobladillos, bastas, costuras francesas y overlock. Mucha práctica, para que las terminaciones queden bien.</p></div>
-          </li>
-          <li>
-            <span class="clase-n">03</span>
-            <div><h3>Técnicas</h3>
-            <p>Cierres, broches, ojales y bolsillos; terminaciones con elástico, fruncidos, tableados, estampas y bordados: lo que necesitas para confeccionar una prenda.</p></div>
-          </li>
-          <li>
-            <span class="clase-n">04</span>
-            <div><h3>Tu estuche</h3>
-            <p>Tu primer producto: un estuche personalizado, diseñado, cortado y cosido por ti, con tu nombre.</p></div>
-          </li>
-        </ol>
-        <a class="boton" href="#inscripcion" data-curso="lo-hice-yo">Quiero inscribirme</a>
-      </div>
-      <figure class="video">
-        <video controls preload="none" playsinline poster="assets/img/poster-lo-hice-yo.jpg" width="720" height="1280">
-          <source src="assets/video/lo-hice-yo.mp4" type="video/mp4">
-        </video>
-        <figcaption>El curso, clase por clase. 1 minuto, con sonido.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="seccion seccion-tono" id="ninas-ninos" aria-labelledby="t-ninos">
-    <div class="ancho dos-columnas dos-columnas-inversa">
-      <figure class="video">
-        <video controls preload="none" playsinline poster="assets/img/poster-talleres.jpg" width="720" height="1280">
-          <source src="assets/video/talleres-ninas-ninos.mp4" type="video/mp4">
-        </video>
-        <figcaption>Los talleres en 29 segundos. Se entiende sin sonido.</figcaption>
-      </figure>
-      <div>
-        <p class="etiqueta">Talleres de costura</p>
-        <h2 id="t-ninos">Para niñas y niños</h2>
-        <p class="bajada">Aprenden a medir, enhebrar y cortar, a su ritmo y con paciencia, en máquinas de verdad. Y cosen su primera pieza: se la llevan a casa con su nombre bordado.</p>
-        <a class="boton" href="#inscripcion" data-curso="ninas-ninos">Preguntar por el taller</a>
-      </div>
-    </div>
-    <div class="ancho galeria" role="list" aria-label="Fotos del taller">
-      <img role="listitem" src="assets/img/03-bolsas-juana-elena.jpg" alt="Dos bolsas de cuadrillé blanco y negro con los nombres Juana y Elena bordados en hilo naranja" loading="lazy" width="900" height="1600">
-      <img role="listitem" src="assets/img/05-nina-enhebrando-maquina.jpg" alt="Una niña, de espaldas, enhebra una máquina de coser junto a la ventana del taller" loading="lazy" width="1000" height="1333">
-      <img role="listitem" src="assets/img/01-kit-costura-bolsa-juana.jpg" alt="Una bolsa terminada con el nombre Juana, junto a tijeras, carretes, alfileres y huincha de medir" loading="lazy" width="900" height="1600">
-      <img role="listitem" src="assets/img/06-nina-cosiendo-taller.jpg" alt="Una niña, de espaldas, cose en una máquina frente a la ventana del taller" loading="lazy" width="900" height="1650">
-      <img role="listitem" src="assets/img/04-bolsas-y-merienda.jpg" alt="Las bolsas terminadas sobre la mesa, junto a la merienda: queques y galletas" loading="lazy" width="900" height="1600">
-    </div>
-  </section>
-
-  <section class="seccion" id="taller" aria-labelledby="t-taller">
-    <div class="ancho">
-      <p class="etiqueta">El taller</p>
-      <h2 id="t-taller">Producción, gestión y diseño</h2>
-      <div class="tres">
-        <div>
-          <h3>Prendas y piezas a medida</h3>
-          <p>Diseño y producción de prendas y piezas por encargo, en el taller.</p>
-        </div>
-        <div>
-          <h3>Cursos y talleres</h3>
-          <p>«Lo hice yo» para aprender a coser desde cero, y talleres de costura para niñas y niños.</p>
-        </div>
-        <div>
-          <h3>PUA</h3>
-          <p>Nuestra línea de diseño textil infantil sostenible: prendas hechas reutilizando materiales. <a href="https://puatextil.com">puatextil.com</a></p>
+  <section class="portada" aria-labelledby="t-portada">
+    <canvas id="tela" aria-hidden="true"></canvas>
+    <div class="contenedor">
+      <h1 class="portada-titulo t-h1" id="t-portada" data-lineas><span class="acento">Taller textil</span><br>a medida</h1>
+      <div class="portada-lado" data-rev style="--d:.2s">
+        <p>Laboratorio Textil es el taller de Natalia. Diseñamos, producimos y gestionamos prendas a medida, y enseñamos a coser.</p>
+        <div class="marcas">
+          <p class="marcas-etiqueta">Marcas en nuestras prendas</p>
+          <div class="marcas-cinta"><div class="marcas-pista" data-duplicar>
+            <img src="/assets/img/marcas/laboratoriotextil.png" alt="Laboratorio Textil" height="26">
+            <img src="/assets/img/marcas/ochodelocho-r3-02.png" alt="ochodelocho" height="26">
+            <img src="/assets/img/marcas/luche.png" alt="Luche" height="26">
+            <img src="/assets/img/marcas/datoyrelato-r3-01.png" alt="Dato y relato" height="26">
+            <img src="/assets/img/marcas/whitebox-r2-01.png" alt="WhiteBox" height="26">
+          </div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="seccion seccion-tono" id="inscripcion" aria-labelledby="t-insc">
-    <div class="ancho dos-columnas">
-      <div>
-        <p class="etiqueta">Inscripciones</p>
-        <h2 id="t-insc">Inscríbete o pregúntanos</h2>
-        <p class="bajada">Déjanos tus datos y te escribimos para contarte fechas, horario y valor. Usamos tus datos solo para responderte.</p>
+  <section class="seccion" aria-labelledby="t-taller">
+    <div class="contenedor">
+      <div class="taller-foto esquinas" data-rev><img src="/assets/img/05-nina-enhebrando-maquina.jpg" alt="Una niña, de espaldas, enhebra una máquina de coser junto a la ventana del taller" loading="lazy"></div>
+      <div class="taller-texto">
+        <p class="t-etiqueta" data-rev>El taller</p>
+        <h2 class="t-h2" id="t-taller" data-lineas>Medimos, probamos y repetimos <span class="acento">hasta que la prenda queda bien.</span></h2>
+        <p class="t-suave" data-rev>Laboratorio Textil es el taller textil de Natalia: producción, gestión y diseño de prendas y piezas a medida.</p>
+        <p class="t-suave" data-rev>También es escuela: capacitación para todas las edades y escalas, desde «Lo hice yo», el curso de costura básico, hasta los talleres para niñas y niños.</p>
+        <a class="boton" href="/produccion/" data-rev><span class="boton-txt"><span>Ver la producción</span><span aria-hidden="true">Ver la producción</span></span></a>
       </div>
-      <form class="formulario" id="form-inscripcion" novalidate>
-        <label for="f-curso">¿Qué te interesa?</label>
-        <select id="f-curso" name="curso">
-          <option value="lo-hice-yo">«Lo hice yo» · curso de costura básico</option>
-          <option value="ninas-ninos">Taller para niñas y niños</option>
-          <option value="otro">Otra consulta (prendas a medida, encargos…)</option>
-        </select>
-        <label for="f-nombre">Tu nombre</label>
-        <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
-        <label for="f-contacto">Teléfono o correo</label>
-        <input id="f-contacto" name="contacto" type="text" autocomplete="email" inputmode="email" maxlength="160" placeholder="+56 9 … o tu@correo.cl" required>
-        <label for="f-para">¿Para quién es? <span class="opcional">(opcional)</span></label>
-        <input id="f-para" name="para" type="text" maxlength="120" placeholder="Para mí, para mi hija de 9 años…">
-        <label for="f-mensaje">Mensaje <span class="opcional">(opcional)</span></label>
-        <textarea id="f-mensaje" name="mensaje" rows="4" maxlength="1500"></textarea>
-        <div class="trampa" aria-hidden="true"><label for="f-sitio">No llenar</label><input id="f-sitio" name="sitio_web" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="boton" type="submit">Enviar</button>
-        <p class="estado" id="f-estado" role="status" aria-live="polite"></p>
-      </form>
+    </div>
+  </section>
+
+  <section class="escena" aria-label="Lo que hace el taller">
+    <div class="escena-fija">
+      <div class="escena-fotos" aria-hidden="true">
+        <img class="activa" src="/assets/img/01-kit-costura-bolsa-juana.jpg" alt="" loading="lazy">
+        <img src="/assets/img/02-bolsa-juana-cordon.jpg" alt="" loading="lazy">
+        <img src="/assets/img/06-nina-cosiendo-taller.jpg" alt="" loading="lazy">
+        <img src="/assets/img/04-bolsas-y-merienda.jpg" alt="" loading="lazy">
+      </div>
+      <div class="contenedor">
+        <p class="escena-frase t-h1"><span>Un taller de</span>
+          <span class="escena-palabras"><span class="activa">producción a medida</span><span>gestión y entregas</span><span>diseño y moldes</span><span>capacitación</span></span></p>
+      </div>
+      <i class="escena-marca" aria-hidden="true"></i>
+      <div class="escena-avance" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <section class="seccion desafio borde-arriba" aria-labelledby="t-desafio">
+    <div class="contenedor">
+      <div class="desafio-titulo">
+        <p class="t-etiqueta" data-rev>El desafío</p>
+        <h2 class="t-h2" id="t-desafio" data-rev>La forma de hacer ropa no está a la altura de <s>mañana</s> <span class="acento">hoy</span></h2>
+      </div>
+      <div class="desafio-lista">
+        <div class="reto abierto">
+          <button class="reto-cabeza" type="button" aria-expanded="true"><span class="reto-etiqueta">Desperdicio</span><span class="reto-titulo">El 30 % de las prendas que se fabrican nunca se vende ni se usa</span><span class="reto-mas" aria-hidden="true"></span></button>
+          <div class="reto-cuerpo"><div>
+            <p>Los ciclos largos de producción en el extranjero obligan a las marcas a encargar grandes volúmenes meses antes de conocer la demanda. El resultado:</p>
+            <ul><li>Apostar con el inventario</li><li>Ganancias perdidas</li><li>Menos confianza de los clientes</li></ul>
+            <p>Solo en la moda, esto significa un billón de dólares en pérdidas por productos rebajados e inventario sin vender (BCG, 2020).</p>
+          </div></div>
+        </div>
+        <div class="reto">
+          <button class="reto-cabeza" type="button" aria-expanded="false"><span class="reto-etiqueta">Falta de manos</span><span class="reto-titulo">Faltan costureras y costureros, y la producción se atasca</span><span class="reto-mas" aria-hidden="true"></span></button>
+          <div class="reto-cuerpo"><div>
+            <p>Mientras otras industrias cambiaron, la costura sigue igual. Los números preocupan:</p>
+            <ul><li>4 de cada 10 trabajadores tienen <b>más de 50 años</b> (Euratex, 2024)</li><li>El 51 % de los fabricantes de ropa enfrenta una <b>falta grave de personal</b> (ifo, 2022)</li><li>Hasta un <b>12 % de rotación mensual</b>: recontratar a toda la planta cada año (OIT, 2019)</li></ul>
+            <p>Por eso enseñamos a coser: cada persona que aprende es una costurera más.</p>
+          </div></div>
+        </div>
+        <div class="reto">
+          <button class="reto-cabeza" type="button" aria-expanded="false"><span class="reto-etiqueta">Impacto ambiental</span><span class="reto-titulo">La moda emite el 8 % del CO2 del mundo</span><span class="reto-mas" aria-hidden="true"></span></button>
+          <div class="reto-cuerpo"><div>
+            <p>Cada segundo se entierra o se quema un camión de basura lleno de textiles. Las cifras de una de las industrias más contaminantes:</p>
+            <ul><li>Responsable del <b>8 % de las emisiones de CO2 del mundo</b> (Naciones Unidas, 2023)</li><li>Llegaría al <b>26 % del presupuesto de carbono del mundo</b> en 2050 (Fundación Ellen MacArthur, 2017; Harvard, 2020)</li><li>Causa el <b>20 % de la contaminación industrial del agua</b> (Parlamento Europeo, 2024)</li></ul>
+            <p>Lo nuestro: hacer solo lo que se necesita, a medida y cerca de quien lo usa.</p>
+          </div></div>
+        </div>
+        <div class="reto">
+          <button class="reto-cabeza" type="button" aria-expanded="false"><span class="reto-etiqueta">Explotación</span><span class="reto-titulo">Solo el 2 % de quienes trabajan en la moda gana un salario digno</span><span class="reto-mas" aria-hidden="true"></span></button>
+          <div class="reto-cuerpo"><div>
+            <p>La costura industrial descansa sobre una explotación sistemática, empujada por la rebaja de costos y la producción en el extranjero.</p>
+            <ul><li>En 2019, <b>1.600 millones de prendas importadas</b> a la UE se vincularon con trabajo forzoso o infantil (EFA, 2019)</li><li>Incluso en el sur de California, el <b>80 % de los talleres de ropa</b> infringió las leyes de salario u horas extra (Departamento del Trabajo de EE. UU., 2023)</li><li>En los principales países productores, <b>el salario mínimo suele cubrir menos del 25 % del costo de vida</b> (Oxfam, 2022; Fashion Revolution, 2020)</li></ul>
+            <p>Hacer ropa no debería costar vidas. En un taller a medida sabes quién cosió tu prenda.</p>
+          </div></div>
+        </div>
+        <div class="reto">
+          <button class="reto-cabeza" type="button" aria-expanded="false"><span class="reto-etiqueta">Un sistema frágil</span><span class="reto-titulo">Aranceles, cadenas frágiles y normas más estrictas tensionan el modelo global de la moda</span><span class="reto-mas" aria-hidden="true"></span></button>
+          <div class="reto-cuerpo"><div>
+            <p>Las cadenas de la moda se hicieron para abaratar, no para resistir ni para ser rápidas o transparentes. Los últimos años lo recordaron:</p>
+            <ul><li>Cierres por la pandemia y puertos atascados</li><li>Nuevas reglas de la UE y EE. UU. para las cadenas de suministro</li><li>Aranceles de EE. UU.</li></ul>
+            <p>Producir cerca no solo reduce riesgos: les da ventaja a las marcas y a quienes producen.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solucion borde-arriba" aria-labelledby="t-solucion">
+    <div class="solucion-fija">
+      <div class="contenedor">
+        <div class="solucion-texto">
+          <p class="t-etiqueta" data-rev>Lo que hacemos</p>
+          <h2 class="t-h2" id="t-solucion" data-lineas>Prendas hechas a <span class="acento">la medida</span></h2>
+          <p data-rev>Tomamos medidas, hacemos el molde, probamos la tela y cosemos en el taller. Así una prenda se produce cerca de quien la usa, de una pieza a una serie.</p>
+        </div>
+        <div class="solucion-medio esquinas puntos" data-rev>
+          <div class="solucion-base" aria-hidden="true"></div>
+          <video id="giro" muted loop playsinline preload="auto" poster="/assets/video/poleron-giro.jpg" aria-label="El polerón de Laboratorio Textil gira: frente y espalda">
+            <source src="/assets/video/poleron-giro.webm" type="video/webm"><source src="/assets/video/poleron-giro.mp4" type="video/mp4">
+          </video>
+          <canvas id="giro-color" aria-hidden="true"></canvas>
+          <canvas id="giro-trama" aria-hidden="true"></canvas>
+          <i class="solucion-luz" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hecho" aria-labelledby="t-hecho">
+    <div class="hecho-cabeza borde-arriba">
+      <div class="contenedor">
+        <h2 class="hecho-titulo t-h2" id="t-hecho" data-rev><span class="acento">Hecho en <span class="hecho-cambia"><span class="activa">Chile</span><span>el taller</span></span></span><br>a la medida<br>de quien lo usa</h2>
+        <div class="hecho-mapa" aria-hidden="true">
+          <img class="activa trama" src="/assets/img/mapas/chile.png" alt="" loading="lazy">
+          <img class="trama" src="/assets/img/mapas/chile-cerca.png" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="cifras">
+      <div class="cifra" data-rev><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="icono" aria-hidden="true"><path d="M14 10H30 M14 34H30 M17 10V34 M27 10V34 M17 16C21 18 23 18 27 16 M17 22C21 24 23 24 27 22 M17 28C21 30 23 30 27 28 M38 6L32 40 M37 9.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0 M27 30C33 30 36 26 36.5 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path></svg><div><p class="cifra-n">4</p><p class="cifra-txt">Clases en «Lo hice yo»</p></div></div>
+      <div class="cifra" data-rev style="--d:.1s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="icono" aria-hidden="true"><path d="M14 8L8 12L5 19L10 21L12 17V33H28V17L30 21L35 19L32 12L26 8C24 11 16 11 14 8Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path></svg><div><p class="cifra-n">1</p><p class="cifra-txt">Pieza: el pedido mínimo</p></div></div>
+      <div class="cifra" data-rev style="--d:.2s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="icono" aria-hidden="true"><path d="M12 9H36V42H12Z M19 6H29V12H19Z M18 21l3 3 5-6 M30 21H32 M18 30l3 3 5-6 M30 30H32" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path></svg><div><p class="cifra-n">3</p><p class="cifra-txt">Oficios: producción, gestión, diseño</p></div></div>
+      <a class="cifra cifra-enlace" href="/produccion/" data-rev style="--d:.3s"><svg class="flecha" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.5"/></svg><p class="t-h4">¿Quieres ver cómo trabajamos?</p></a>
+    </div>
+  </section>
+
+  <section class="videos borde-arriba" aria-labelledby="t-videos">
+    <div class="ancha"><img src="/assets/img/03-bolsas-juana-elena.jpg" alt="Dos bolsas de cuadrillé con los nombres Juana y Elena bordados en hilo naranja" loading="lazy" data-paralaje></div>
+    <div class="seccion">
+      <div class="contenedor">
+        <div class="lista-cabeza">
+          <p class="t-etiqueta" data-rev>En video</p>
+          <h2 class="t-h2" id="t-videos" data-lineas>Mira <span class="acento">el taller</span> en video</h2>
+        </div>
+        <div class="lista">
+          <a href="/cursos/#lo-hice-yo" data-rev><div><small>Curso de costura básico</small><span class="t-h4">«Lo hice yo», clase por clase</span></div><svg class="flecha" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a href="/cursos/#ninas-ninos" data-rev><div><small>Talleres</small><span class="t-h4">Niñas y niños cosen su primera pieza</span></div><svg class="flecha" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a href="/cursos/#inscripcion" data-rev><div><small>Inscripciones</small><span class="t-h4">Fechas, horario y valor: pregúntanos</span></div><svg class="flecha" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="llamado" aria-labelledby="t-llamado">
+    <div class="contenedor">
+      <div class="llamado-caja esquinas">
+        <div class="llamado-forma" aria-hidden="true"></div>
+        <div class="llamado-txt">
+          <h2 class="t-h2" id="t-llamado" data-lineas><span class="acento">¿Tienes una prenda</span><br>en mente?</h2>
+          <a class="boton" href="/cursos/#inscripcion" data-rev><span class="boton-txt"><span>Escríbenos</span><span aria-hidden="true">Escríbenos</span></span></a>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
-
 <footer class="pie">
-  <div class="ancho pie-fila">
-    <div class="pie-marca">
-      <img src="assets/img/logo.svg" alt="" width="36" height="36">
-      <div><b>Laboratorio Textil</b><br><span>Donde la costura se vuelve ciencia.</span></div>
+  <div class="pie-llamado">
+    <div class="contenedor">
+      <div class="pie-llamado-texto" data-rev>
+        <h2 class="t-h3">Cursos, talleres <span class="acento">y encargos</span></h2>
+        <p>Déjanos tus datos y te escribimos con fechas, horario y valor, o para conversar tu prenda.</p>
+      </div>
+      <a class="boton" href="/cursos/#inscripcion" data-rev><span class="boton-txt"><span>Inscríbete o pregúntanos</span><span aria-hidden="true">Inscríbete o pregúntanos</span></span></a>
     </div>
-    <nav class="pie-enlaces" aria-label="Enlaces">
-      <a href="https://puatextil.com">PUA · puatextil.com</a>
-      <a href="https://puatextil.com/intranet">Intranet</a>
-    </nav>
   </div>
+  <div class="pie-cuerpo">
+    <div class="contenedor">
+      <nav class="pie-menu" aria-label="Páginas">
+        <a href="/">Inicio</a><a href="/produccion/">Producción</a><a href="/cursos/">Cursos</a><a href="/cursos/#inscripcion">Escríbenos</a>
+      </nav>
+      <div class="pie-datos">
+        <div><h3>Laboratorio Textil</h3><p>El taller textil de Natalia<br>Producción · Gestión · Diseño<br>Capacitación<br>Chile</p></div>
+        <div><h3>También</h3><p><a class="enlace-linea" href="https://puatextil.com">PUA · puatextil.com</a><br><a class="enlace-linea" href="https://puatextil.com/intranet">Intranet</a></p></div>
+        <p class="lema">Donde la costura se vuelve ciencia.</p>
+      </div>
+      <div class="pie-logo esquinas"><img src="/assets/img/logo-negativo.svg" alt="Laboratorio Textil" width="130" height="130"></div>
+    </div>
+  </div>
+  <div class="pie-cinta" aria-hidden="true"><div class="pie-cinta-pista"><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span></div></div>
+  <div class="pie-regla" aria-hidden="true"></div>
+  <div class="pie-final"><span>© <span data-anio>2026</span> Laboratorio Textil</span><a href="https://www.laboratoriotextil.com/">www.laboratoriotextil.com</a></div>
 </footer>
 
-<script src="assets/app.js"></script>
+<script src="/assets/lib/gsap.min.js"></script>
+<script src="/assets/lib/ScrollTrigger.min.js"></script>
+<script src="/assets/lib/SplitText.min.js"></script>
+<script src="/assets/lib/lenis.min.js"></script>
+<script src="/assets/sitio.js"></script>
+<script src="/assets/inicio.js"></script>
 </body>
 </html>
