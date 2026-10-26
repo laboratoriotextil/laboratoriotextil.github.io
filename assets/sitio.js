@@ -98,12 +98,16 @@
   // entradas
   if (quieto || !hayGsap) { raiz.classList.remove('js'); return; }
   document.fonts.ready.then(() => {
+    // los textos entran palabra por palabra, cada línea con máscara (títulos, etiquetas y párrafos)
+    const textos = [...document.querySelectorAll('[data-lineas], p[data-rev], h2[data-rev], .t-etiqueta[data-rev]')];
     if (typeof SplitText !== 'undefined') {
-      document.querySelectorAll('[data-lineas]').forEach((el) => {
-        const sp = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'linea' });
-        gsap.set(sp.lines, { yPercent: 105 });
-        ScrollTrigger.create({ trigger: el, start: 'top 88%', once: true,
-          onEnter: () => gsap.to(sp.lines, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08 }) });
+      textos.forEach((el) => {
+        el.removeAttribute('data-rev');
+        SplitText.create(el, { type: 'lines words', mask: 'lines', autoSplit: true, onSplit: (self) => {
+          gsap.set(self.words, { autoAlpha: 0, yPercent: 100 });
+          return ScrollTrigger.create({ trigger: el, start: 'top 70%', once: true,
+            onEnter: () => gsap.to(self.words, { autoAlpha: 1, yPercent: 0, stagger: 0.02, duration: 0.8, ease: 'power2.out' }) });
+        } });
       });
     }
     ScrollTrigger.batch('[data-rev]', { start: 'top 90%', once: true,

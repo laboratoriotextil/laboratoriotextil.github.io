@@ -320,7 +320,7 @@ html.lenis, html.lenis body { height: auto; }
 .llamado-forma::after { content: ""; position: absolute; inset: 1px; clip-path: inherit; background-image: radial-gradient(rgba(0, 161, 157, .5) 1px, transparent 1.5px); background-size: .8rem .8rem; -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 100%, #000, transparent); mask-image: radial-gradient(ellipse 60% 70% at 50% 100%, #000, transparent); box-shadow: inset 0 0 12rem rgba(0, 161, 157, .35); }
 .llamado-txt { position: relative; z-index: 2; padding: 6rem 4rem; }
 .llamado-tela { position: absolute; z-index: 1; left: 1.3rem; right: 1.3rem; bottom: 1.3rem; width: calc(100% - 2.6rem); height: 42%; object-fit: cover; object-position: 50% 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 95.5% 100%, 4.5% 100%, 0 70%); opacity: .28;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 95.5% 100%, 4.5% 100%, 0 70%); opacity: .18;
   -webkit-mask-image: linear-gradient(transparent, #000 60%); mask-image: linear-gradient(transparent, #000 60%); }
 .llamado-txt .boton { margin-top: 3.2rem; }
 
@@ -469,7 +469,7 @@ html.lenis, html.lenis body { height: auto; }
 .estado-ok { color: var(--acento); } .estado-error { color: #ff8f7a; }
 @media (max-width: 767px) {
   .cursos-portada .t-h1, .cursos-portada p, .curso-texto, .curso-video, .curso-texto.derecha, .curso-video.izquierda, .inscripcion-texto, .formulario { grid-column: 1 / -1; grid-row: auto; }
-  .curso-video { position: static; margin-top: 4rem; } .galeria { grid-template-columns: repeat(2, 1fr); } .tarjetas { grid-template-columns: 1fr; }
+  .curso-video { position: static; margin-top: 4rem; } .galeria { grid-template-columns: repeat(2, 1fr); } .galeria img:last-child:nth-child(odd) { grid-column: span 2; aspect-ratio: 16 / 10; } .tarjetas { grid-template-columns: 1fr; }
   .tarjeta { border-right: 0; border-bottom: 1px solid var(--linea); } .tarjeta + .tarjeta { padding-left: 0; } .formulario { margin-top: 4rem; }
 }
 
