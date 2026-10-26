@@ -61,6 +61,37 @@
   // cintas: se duplica el contenido para que el bucle no tenga costura
   document.querySelectorAll('[data-duplicar]').forEach((p) => { p.innerHTML += p.innerHTML; p.querySelectorAll('img').forEach((im, i) => { if (i >= p.children.length / 2) im.alt = ''; }); });
 
+  // paso entre páginas: la página se desvanece antes de ir a otra del sitio
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || a.target === '_blank' || a.hasAttribute('download')) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || (url.pathname === location.pathname && url.hash)) return;
+    e.preventDefault();
+    cerrarMenu();
+    raiz.classList.add('saliendo');
+    setTimeout(() => { location.href = url.href; }, quieto ? 0 : 600);
+  });
+  addEventListener('pageshow', (e) => { if (e.persisted) raiz.classList.remove('saliendo'); });
+
+  // el correo del pie: llega a la intranet del taller como una consulta «Novedades del taller»
+  const pieCorreo = document.getElementById('pie-correo');
+  if (pieCorreo) pieCorreo.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const campo = pieCorreo.querySelector('input[type="email"]'), estado = pieCorreo.querySelector('.pie-correo-estado');
+    const aviso = (t, error) => { estado.textContent = t; estado.classList.toggle('error', !!error); };
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(campo.value.trim())) { aviso('Escribe un correo válido.', true); campo.focus(); return; }
+    aviso('Enviando…');
+    try {
+      const r = await fetch('https://app.laboratoriotextil.com/api/inscripciones', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ curso: 'otro', nombre: 'Novedades del taller', contacto: campo.value.trim(), sitio_web: pieCorreo.sitio_web.value,
+          mensaje: 'Quiere recibir las novedades del taller (correo dejado en el pie de la página).' }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.ok === false) throw new Error(j.error || 'No se pudo enviar.');
+      pieCorreo.reset(); aviso('¡Listo! Te avisaremos de los próximos cursos.');
+    } catch (err) { aviso(err.message + ' Inténtalo en unos minutos.', true); }
+  });
+
   // año
   document.querySelectorAll('[data-anio]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 

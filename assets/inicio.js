@@ -1,61 +1,35 @@
-/* Laboratorio Textil · inicio: la tela de puntos de la portada, la escena de la palabra que cambia,
-   el acordeón del desafío, el polerón que pasa de trama a imagen al bajar, el «Hecho en» que alterna
-   con su globo, y la foto ancha que se mueve más lento que la página. */
+/* Laboratorio Textil · inicio: la caja del video del taller que se abre, la escena de la palabra que
+   cambia (entra creciendo y sale achicándose), el acordeón del desafío, la fila del polerón —se fija,
+   el polerón pasa de trama a imagen y la fila corre hacia «Hecho en»—, el globo que alterna y la foto
+   ancha que se mueve más lento que la página. */
 (function () {
   const quieto = window.LT && LT.quieto;
-  const TEAL = [0, 161, 157];
 
-  // ── portada: una tela que ondula, dibujada en puntos ──
-  const lienzo = document.getElementById('tela');
-  if (lienzo) {
-    const cx = lienzo.getContext('2d');
-    let w, h, paso, dpr, vivo = true;
-    function medir() {
-      dpr = Math.min(2, devicePixelRatio || 1);
-      w = lienzo.clientWidth; h = lienzo.clientHeight;
-      lienzo.width = w * dpr; lienzo.height = h * dpr;
-      paso = Math.max(5, Math.round(w / 190));
-    }
-    medir(); addEventListener('resize', medir);
-    function altura(x, y, t) {
-      // tres ondas que se cruzan, como una tela que flota
-      const u = x / w, v = y / h;
-      return Math.sin(u * 5.2 + t * 0.55 + Math.sin(v * 2.1 + t * 0.3) * 1.6) * 0.5
-           + Math.sin(u * 2.3 - v * 3.1 + t * 0.35) * 0.35
-           + Math.sin((u + v) * 7.5 - t * 0.8) * 0.15;
-    }
-    function dibujar(ms) {
-      if (!vivo) return requestAnimationFrame(dibujar);
-      const t = quieto ? 0 : ms / 1000;
-      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx.clearRect(0, 0, w, h);
-      for (let y = paso / 2; y < h; y += paso) {
-        const banda = Math.max(0, 1 - Math.abs(y / h - 0.42) * 2.1);       // la tela ocupa una franja diagonal
-        if (banda <= 0) continue;
-        for (let x = paso / 2; x < w; x += paso) {
-          const centro = y - (x / w - 0.5) * h * 0.18;                       // la franja se inclina
-          const b2 = Math.max(0, 1 - Math.abs(centro / h - 0.42) * 2.4);
-          if (b2 <= 0.02) continue;
-          const z = altura(x, y, t);
-          const d = paso * 3;
-          const pend = (altura(x + d, y - d, t) - z) / (d / w);              // pendiente hacia la luz
-          const luz = 0.45 + pend * 0.11 + z * 0.18;                         // luz rasante: las caras que miran la luz brillan
-          const k = Math.max(0, Math.min(1, luz)) * Math.min(1, b2 * 1.6);
-          if (k < 0.08) continue;
-          const r = paso * (0.18 + 0.5 * k);
-          const g = k > 0.8 ? (k - 0.8) * 5 : 0;                             // las crestas pasan a un verde más claro
-          cx.fillStyle = `rgba(${Math.round(TEAL[0] + 95 * g)},${Math.round(TEAL[1] + 84 * g)},${Math.round(TEAL[2] + 71 * g)},${0.15 + 0.85 * k})`;
-          cx.fillRect(x - r / 2, y - r / 2, r, r);
-        }
-      }
-      if (!quieto) requestAnimationFrame(dibujar);
-    }
-    requestAnimationFrame(dibujar);
-    new IntersectionObserver((e) => { vivo = e[0].isIntersecting; }).observe(lienzo);
+  const hayST = typeof ScrollTrigger !== 'undefined' && !quieto;
+  const computador = matchMedia('(min-width: 992px)').matches;
+
+  // ── el taller: la caja del video se abre desde el centro al llegar ──
+  const caja = document.getElementById('taller-foto');
+  if (caja && hayST) {
+    gsap.set(caja, { clipPath: 'inset(18% 18% 18% 18%)' });
+    gsap.set(caja.querySelector('video'), { scale: 1.3 });
+    ScrollTrigger.create({ trigger: caja, start: 'top 85%', once: true, onEnter: () => {
+      gsap.to(caja, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease: 'expo.inOut' });
+      gsap.to(caja.querySelector('video'), { scale: 1, duration: 1.6, ease: 'expo.inOut' });
+    } });
   }
 
   // ── la escena: el avance del scroll elige la palabra y la foto ──
   const escena = document.querySelector('.escena');
+  if (escena && hayST) {
+    const fotosCaja = escena.querySelector('.escena-fotos'), frase = escena.querySelector('.contenedor');
+    gsap.fromTo(fotosCaja, { scale: 1.2, opacity: .5, transformOrigin: '50% 0%' }, { scale: 1, opacity: 1, ease: 'none',
+      scrollTrigger: { trigger: escena, start: 'top bottom', end: 'top top', scrub: 1 } });
+    gsap.fromTo(frase, { scale: .95, opacity: .8 }, { scale: 1, opacity: 1, ease: 'power2.out',
+      scrollTrigger: { trigger: escena, start: 'top bottom', end: 'top top', scrub: 1 } });
+    const salida = gsap.timeline({ scrollTrigger: { trigger: escena, start: 'bottom-=150% bottom', end: 'bottom bottom', scrub: 1 } });
+    salida.to(frase, { scale: .8, opacity: .6, ease: 'power2.in' }, 0).to(fotosCaja, { scale: 1.3, opacity: .5, transformOrigin: '50% 100%', ease: 'none' }, 0);
+  }
   if (escena && typeof ScrollTrigger !== 'undefined') {
     const palabras = escena.querySelectorAll('.escena-palabras span');
     const fotos = escena.querySelectorAll('.escena-fotos img');
@@ -96,7 +70,7 @@
       if (trama.width !== Math.round(W * dpr)) { trama.width = color.width = Math.round(W * dpr); trama.height = color.height = Math.round(H * dpr); }
       // la imagen a color va sobre el color de la página: el negro del video se vuelve fondo
       const fuente = video.readyState >= 2 ? video : poster;
-      cc.globalCompositeOperation = 'source-over'; cc.fillStyle = '#0a0a0a'; cc.fillRect(0, 0, color.width, color.height);
+      cc.globalCompositeOperation = 'source-over'; cc.fillStyle = '#000'; cc.fillRect(0, 0, color.width, color.height);
       cc.globalCompositeOperation = 'lighten'; cc.drawImage(fuente, 0, 0, color.width, color.height);
       const filas = Math.round(COLS * H / W);
       muestra.width = COLS; muestra.height = filas;
@@ -120,14 +94,25 @@
     addEventListener('resize', cuadro);
     new IntersectionObserver((e) => { if (e[0].isIntersecting) { if (!quieto) video.play().catch(() => {}); } else video.pause(); }, { threshold: 0.1 }).observe(video);
     const medio = document.querySelector('.solucion-medio');
-    if (typeof ScrollTrigger !== 'undefined' && matchMedia('(min-width: 768px)').matches) {
-      ScrollTrigger.create({ trigger: '.solucion', start: 'top top', end: 'bottom bottom', scrub: true,
-        onUpdate: (st) => {
-          const p = Math.min(1, Math.max(0, (st.progress - 0.15) / 0.6));
-          medio.style.setProperty('--corte', (p * 100).toFixed(2) + '%');
-          medio.style.setProperty('--luz', (p > 0 && p < 1 ? 1 : 0).toString());
-        } });
-    } else medio.style.setProperty('--corte', '55%');
+    const fila = document.getElementById('fila'), panelHecho = document.querySelector('.panel-hecho');
+    if (hayST && computador && fila) {
+      const pista = fila.querySelector('.fila-pista');
+      const tl = gsap.timeline({ scrollTrigger: { trigger: fila, pin: true, start: 'top top', end: () => '+=' + innerHeight * 3.2, scrub: 1, anticipatePin: 1, invalidateOnRefresh: true,
+        onUpdate: (st) => { if (st.progress > .6) panelHecho.classList.add('visto'); } } });
+      const escaneo = { p: 0 };
+      tl.to(escaneo, { p: 1, duration: 1, ease: 'none', onUpdate: () => {
+          medio.style.setProperty('--corte', (escaneo.p * 100).toFixed(2) + '%');
+          medio.style.setProperty('--luz', escaneo.p > 0 && escaneo.p < 1 ? '1' : '0');
+        } })
+        .to({}, { duration: .25 })
+        .to(medio.querySelector('.solucion-marco'), { rotationX: 30, ease: 'none', duration: 1.2 }, 'corre')
+        .to(medio, { xPercent: 10, ease: 'none', duration: 1.2 }, 'corre')
+        .to(pista, { x: () => -innerWidth, ease: 'none', duration: 1.2 }, 'corre')
+        .to({}, { duration: .5 });
+    } else {
+      medio.style.setProperty('--corte', '55%');
+      if (panelHecho) panelHecho.classList.add('visto');
+    }
   }
 
   // ── hecho en: la palabra y el globo se turnan ──

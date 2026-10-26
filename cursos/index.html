@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/sitio.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -28,6 +28,7 @@
     <nav class="menu puntos" id="menu" aria-label="Páginas">
       <a href="/" >Inicio</a>
       <a href="/produccion/" >Producción</a>
+      <a href="/#taller">El taller</a>
       <a href="/cursos/" aria-current="page">Cursos</a>
       <a class="boton" href="/cursos/#inscripcion"><span class="boton-txt"><span>Escríbenos</span><span aria-hidden="true">Escríbenos</span></span></a>
     </nav>
@@ -86,7 +87,7 @@
         <img role="listitem" src="/assets/img/05-nina-enhebrando-maquina.jpg" alt="Una niña, de espaldas, enhebra una máquina de coser junto a la ventana del taller" loading="lazy" data-rev>
         <img role="listitem" src="/assets/img/01-kit-costura-bolsa-juana.jpg" alt="Una bolsa terminada con el nombre Juana, junto a tijeras, carretes, alfileres y huincha de medir" loading="lazy" data-rev>
         <img role="listitem" src="/assets/img/06-nina-cosiendo-taller.jpg" alt="Una niña, de espaldas, cose en una máquina frente a la ventana del taller" loading="lazy" data-rev>
-        <img role="listitem" src="/assets/img/04-bolsas-y-merienda.jpg" alt="Las bolsas terminadas sobre la mesa, junto a la merienda: queques y galletas" loading="lazy" data-rev>
+        <img role="listitem" src="/assets/img/02-bolsa-juana-cordon.jpg" alt="Una bolsa de cuadrillé terminada, con su cordón y el nombre Juana bordado" loading="lazy" data-rev>
       </div>
     </div>
   </section>
@@ -96,9 +97,9 @@
       <p class="t-etiqueta" data-rev>El taller</p>
       <h2 class="t-h2" id="t-taller" data-lineas>Producción, gestión y diseño</h2>
       <div class="tarjetas">
-        <div class="tarjeta" data-rev><h3>Prendas y piezas a medida</h3><p>Diseño y producción de prendas y piezas por encargo, en el taller. <a class="enlace-linea" href="/produccion/">Cómo trabajamos</a></p></div>
-        <div class="tarjeta" data-rev><h3>Capacitación</h3><p>Para todas las edades y escalas: «Lo hice yo» para aprender a coser desde cero, y talleres de costura para niñas y niños.</p></div>
-        <div class="tarjeta" data-rev><h3>PUA</h3><p>Nuestra línea de diseño textil infantil sostenible: prendas hechas reutilizando materiales. <a class="enlace-linea" href="https://puatextil.com">puatextil.com</a></p></div>
+        <div class="tarjeta" data-rev><img src="/assets/img/taller/maquina-cortes.webp" alt="Piezas de fieltro cortadas, en fila junto a la máquina del taller" loading="lazy" width="900" height="900"><h3>Prendas y piezas a medida</h3><p>Diseño y producción de prendas y piezas por encargo, en el taller. <a class="enlace-linea" href="/produccion/">Cómo trabajamos</a></p></div>
+        <div class="tarjeta" data-rev><img src="/assets/img/05-nina-enhebrando-maquina.jpg" alt="Una niña, de espaldas, enhebra una máquina de coser" loading="lazy"><h3>Capacitación</h3><p>Para todas las edades y escalas: «Lo hice yo» para aprender a coser desde cero, y talleres de costura para niñas y niños.</p></div>
+        <div class="tarjeta" data-rev><img src="/assets/img/taller/maquina-moldes.webp" alt="Círculos de fieltro cortados y moldes de papel junto a la máquina" loading="lazy" width="900" height="900"><h3>PUA</h3><p>Nuestra línea de diseño textil infantil sostenible: prendas hechas reutilizando materiales. <a class="enlace-linea" href="https://puatextil.com">puatextil.com</a></p></div>
       </div>
     </div>
   </section>
@@ -134,22 +135,41 @@
 
 </main>
 <footer class="pie">
-  <div class="pie-cuerpo">
-    <div class="contenedor">
-      <nav class="pie-menu" aria-label="Páginas">
-        <a href="/">Inicio</a><a href="/produccion/">Producción</a><a href="/cursos/">Cursos</a><a href="/cursos/#inscripcion">Escríbenos</a>
-      </nav>
-      <div class="pie-datos">
-        <div><h3>Laboratorio Textil</h3><p>El taller textil de Natalia<br>Producción · Gestión · Diseño<br>Capacitación<br>Chile</p></div>
-        <div><h3>También</h3><p><a class="enlace-linea" href="https://puatextil.com">PUA · puatextil.com</a><br><a class="enlace-linea" href="https://puatextil.com/intranet">Intranet</a></p></div>
-        <p class="lema">Donde la costura se vuelve ciencia.</p>
+  <div class="pie-principal">
+    <div class="pie-novedades">
+      <div class="contenedor">
+        <div class="pie-novedades-texto">
+          <h2 class="pie-novedades-titulo">Novedades <br>del <span class="acento">taller</span></h2>
+          <p>Déjanos tu correo y te avisamos de los próximos cursos y talleres.</p>
+        </div>
+        <form class="pie-correo" id="pie-correo" novalidate>
+          <label class="solo-lector" for="pie-correo-campo">Tu correo</label>
+          <input id="pie-correo-campo" name="contacto" type="email" autocomplete="email" placeholder="Tu correo" maxlength="160" required>
+          <input class="trampa" name="sitio_web" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <p class="pie-correo-estado" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <div class="pie-logo esquinas"><img src="/assets/img/logo-negativo.svg" alt="Laboratorio Textil" width="130" height="130"></div>
+    </div>
+    <div class="pie-cuerpo">
+      <div class="contenedor">
+        <nav class="pie-menu" aria-label="Páginas">
+          <a href="/" >Inicio</a><a href="/produccion/">Producción</a><a href="/#taller">El taller</a><a href="/cursos/">Cursos</a><a href="/cursos/#inscripcion">Escríbenos</a>
+        </nav>
+        <div class="pie-datos">
+          <div><h3>Laboratorio Textil</h3><p>El taller textil de Natalia<br>Producción · Gestión · Diseño<br>Capacitación<br>Chile</p></div>
+          <div><h3>En línea</h3><p><a class="enlace-linea" href="https://www.laboratoriotextil.com/">www.laboratoriotextil.com</a><br><a class="enlace-linea" href="https://puatextil.com">puatextil.com</a> · <a class="enlace-linea" href="https://puatextil.com/intranet">Intranet</a></p></div>
+          <p class="lema">Donde la costura se vuelve ciencia.</p>
+        </div>
+        <div class="pie-logo"><i class="pie-logo-e e1"></i><i class="pie-logo-e e2"></i><i class="pie-logo-e e3"></i><i class="pie-logo-e e4"></i><img src="/assets/img/logo-negativo.svg" alt="Laboratorio Textil" width="133" height="133"></div>
+      </div>
     </div>
   </div>
-  <div class="pie-cinta" aria-hidden="true"><div class="pie-cinta-pista"><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span></div></div>
-  <div class="pie-regla" aria-hidden="true"></div>
-  <div class="pie-final"><span>© <span data-anio>2026</span> Laboratorio Textil</span><a href="https://www.laboratoriotextil.com/">www.laboratoriotextil.com</a></div>
+  <div class="pie-fondo">
+    <div class="pie-cinta" aria-hidden="true"><div class="pie-cinta-pista"><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span></div></div>
+    <div class="pie-regla" aria-hidden="true"></div>
+    <div class="pie-final"><span>laboratoriotextil.com</span><span>Laboratorio Textil</span><span>© <span data-anio>2026</span> Laboratorio Textil</span></div>
+  </div>
 </footer>
 
 <script src="/assets/lib/gsap.min.js"></script>

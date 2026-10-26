@@ -1,0 +1,59 @@
+{
+  "nota": "Imágenes del sitio hechas con Lumina-Image-2.0 (Apache-2.0, pesos abiertos, sin marca de agua) en whitebox.",
+  "neg": "text, letters, words, watermark, logo, signature, label, brand name, people, person, face, hands, cartoon, illustration, 3D render, CGI, oversaturated",
+  "semillas": [
+    11,
+    23,
+    37
+  ],
+  "imagenes": [
+    {
+      "id": "tela-turquesa",
+      "w": 1280,
+      "h": 704,
+      "prompt": "Studio photograph of a single large sheet of teal green silk fabric floating and twisting in mid-air, soft folds and long diagonal creases, lit from the side, against a pure black background, the fabric spans the frame horizontally, high detail, sharp focus"
+    },
+    {
+      "id": "tela-ondas",
+      "w": 1536,
+      "h": 512,
+      "prompt": "Studio photograph of beige natural linen fabric lying in soft rolling waves like low dunes, close-up of the woven texture, warm side light, the top half of the frame is pure black background, minimal, high detail"
+    },
+    {
+      "id": "escena-produccion",
+      "w": 1536,
+      "h": 864,
+      "prompt": "Documentary photograph inside a small sewing workshop: an old cream colored industrial straight-stitch sewing machine with a flexible work lamp on a white sewing table, beige canvas fabric under the presser foot, cut fabric pieces stacked beside it, a wooden wall behind, warm afternoon window light, shallow depth of field, muted natural colors, nobody in the frame"
+    },
+    {
+      "id": "escena-gestion",
+      "w": 1536,
+      "h": 864,
+      "prompt": "Documentary photograph on a wooden worktable in a small textile workshop: neatly folded plain sweatshirts and t-shirts in white, grey and teal stacked next to brown kraft paper parcels tied with cotton string, a roll of kraft paper and a pair of fabric shears, soft natural window light, muted colors, nobody in the frame"
+    },
+    {
+      "id": "escena-diseno",
+      "w": 1536,
+      "h": 864,
+      "prompt": "Documentary photograph of a large cutting table in a sewing workshop: brown paper sewing patterns laid on beige cotton fabric, tailor's chalk lines, a yellow measuring tape, pins in a pincushion and fabric shears, seen from a low angle across the table, warm window light, shallow depth of field, nobody in the frame"
+    },
+    {
+      "id": "escena-kit",
+      "w": 1920,
+      "h": 1088,
+      "prompt": "documentary photograph, top-down angled view of a white sewing table in a small textile workshop: a black and white gingham cotton drawstring bag, red-handled fabric scissors, a yellow tailor's measuring tape, spools of beige and dark green thread, a pincushion with colorful pins, a seam ripper and a few buttons, soft natural window light from the left, shallow depth of field, crisp detail, muted natural colors, no people, no text"
+    },
+    {
+      "id": "ancha-prendas",
+      "w": 1920,
+      "h": 1088,
+      "prompt": "documentary photograph of a wooden worktable in a small sewing workshop: folded plain cotton sweatshirts in white, light grey and teal stacked neatly, two black and white gingham fabric bags, a roll of brown kraft paper and a spool of cotton string, warm afternoon window light, shallow depth of field, crisp textile texture, no people, no text, no logos"
+    },
+    {
+      "id": "maquina-industrial",
+      "w": 1088,
+      "h": 1440,
+      "prompt": "photograph of a cream colored vintage industrial straight-stitch sewing machine on a white sewing table, a small LED work lamp on a flexible arm glowing above the needle, white cotton fabric under the presser foot flowing to the left, a pincushion with colorful pins behind, a ruler printed on the table edge, dark charcoal curtain background, warm lamp light, crisp detail, no people, no text"
+    }
+  ]
+}

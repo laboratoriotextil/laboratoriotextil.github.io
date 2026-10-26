@@ -38,6 +38,7 @@ LLAMADO = '''<section class="llamado" aria-labelledby="t-llamado">
     <div class="contenedor">
       <div class="llamado-caja esquinas">
         <div class="llamado-forma" aria-hidden="true"></div>
+        <img class="llamado-tela" src="/assets/img/tela-ondas.webp" alt="" aria-hidden="true" loading="lazy">
         <div class="llamado-txt">
           <h2 class="t-h2" id="t-llamado" data-lineas><span class="acento">¿Tienes una prenda</span><br>en mente?</h2>
           <a class="boton" href="/cursos/#inscripcion" data-rev><span class="boton-txt"><span>Escríbenos</span><span aria-hidden="true">Escríbenos</span></span></a>
@@ -70,11 +71,8 @@ def prendas(sufijo):
 
 
 def pie(clave):
-    """El pie; en /cursos sin su llamado, porque el formulario está justo encima."""
-    s = leer("pie.html")
-    if clave == "cursos":
-        s = re.sub(r'  <div class="pie-llamado">.*?\n  </div>\n(?=  <div class="pie-cuerpo">)', "", s, flags=re.S)
-    return s
+    """El pie, con el enlace de la página actual marcado."""
+    return leer("pie.html").replace("{pie-inicio}", 'aria-current="page"' if clave == "inicio" else "")
 
 
 def armar(clave):

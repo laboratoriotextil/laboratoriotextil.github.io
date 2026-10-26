@@ -3,9 +3,11 @@
 <main>
 
   <section class="portada" aria-labelledby="t-portada">
-    <canvas id="tela" aria-hidden="true"></canvas>
+    <video class="portada-video" id="portada-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/tela.jpg" aria-hidden="true">
+      <source src="/assets/video/tela.webm" type="video/webm"><source src="/assets/video/tela.mp4" type="video/mp4">
+    </video>
     <div class="contenedor">
-      <h1 class="portada-titulo t-h1" id="t-portada" data-lineas><span class="acento">Taller textil</span><br>a medida</h1>
+      <h1 class="portada-titulo t-h1" id="t-portada" data-lineas><span class="acento">Taller textil</span> a medida</h1>
       <div class="portada-lado" data-rev style="--d:.2s">
         <p>Laboratorio Textil es el taller de Natalia. Diseñamos, producimos y gestionamos prendas a medida, y enseñamos a coser.</p>
         <div class="marcas">
@@ -22,12 +24,17 @@
     </div>
   </section>
 
-  <section class="seccion" aria-labelledby="t-taller">
+  <section class="seccion taller" id="taller" aria-labelledby="t-taller">
     <div class="contenedor">
-      <div class="taller-foto esquinas" data-rev><img src="/assets/img/05-nina-enhebrando-maquina.jpg" alt="Una niña, de espaldas, enhebra una máquina de coser junto a la ventana del taller" loading="lazy"></div>
+      <div class="taller-foto" id="taller-foto">
+        <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/maquina.jpg" aria-label="La máquina recta del taller cose tela blanca bajo su lámpara">
+          <source src="/assets/video/maquina.webm" type="video/webm"><source src="/assets/video/maquina.mp4" type="video/mp4">
+        </video>
+        <i class="taller-foto-puntos" aria-hidden="true"></i>
+      </div>
       <div class="taller-texto">
         <p class="t-etiqueta" data-rev>El taller</p>
-        <h2 class="t-h2" id="t-taller" data-lineas>Medimos, probamos y repetimos <span class="acento">hasta que la prenda queda bien.</span></h2>
+        <h2 class="t-h2" id="t-taller" data-lineas>Medimos, probamos y repetimos<br><span class="acento">hasta que la prenda queda bien.</span></h2>
         <p class="t-suave" data-rev>Laboratorio Textil es el taller textil de Natalia: producción, gestión y diseño de prendas y piezas a medida.</p>
         <p class="t-suave" data-rev>También es escuela: capacitación para todas las edades y escalas, desde «Lo hice yo», el curso de costura básico, hasta los talleres para niñas y niños.</p>
         <a class="boton" href="/produccion/" data-rev><span class="boton-txt"><span>Ver la producción</span><span aria-hidden="true">Ver la producción</span></span></a>
@@ -39,9 +46,6 @@
     <div class="escena-fija">
       <div class="escena-fotos" aria-hidden="true">
         <img class="activa" src="/assets/img/01-kit-costura-bolsa-juana.jpg" alt="" loading="lazy">
-        <img src="/assets/img/02-bolsa-juana-cordon.jpg" alt="" loading="lazy">
-        <img src="/assets/img/06-nina-cosiendo-taller.jpg" alt="" loading="lazy">
-        <img src="/assets/img/04-bolsas-y-merienda.jpg" alt="" loading="lazy">
       </div>
       <div class="contenedor">
         <p class="escena-frase t-h1"><span>Un taller de</span>
@@ -103,15 +107,18 @@
     </div>
   </section>
 
-  <section class="solucion borde-arriba" aria-labelledby="t-solucion">
-    <div class="solucion-fija">
+  <section class="fila borde-arriba" id="fila" aria-label="Lo que hacemos y dónde">
+    <div class="fila-pista">
+      <div class="panel panel-solucion solucion" aria-labelledby="t-solucion">
+        <div class="solucion-fija">
       <div class="contenedor">
         <div class="solucion-texto">
           <p class="t-etiqueta" data-rev>Lo que hacemos</p>
           <h2 class="t-h2" id="t-solucion" data-lineas>Prendas hechas a <span class="acento">la medida</span></h2>
           <p data-rev>Tomamos medidas, hacemos el molde, probamos la tela y cosemos en el taller. Así una prenda se produce cerca de quien la usa, de una pieza a una serie.</p>
         </div>
-        <div class="solucion-medio esquinas puntos" data-rev>
+        <div class="solucion-medio">
+         <div class="solucion-marco esquinas">
           <div class="solucion-base" aria-hidden="true"></div>
           <video id="giro" muted loop playsinline preload="auto" poster="/assets/video/poleron-giro.jpg" aria-label="El polerón de Laboratorio Textil gira: frente y espalda">
             <source src="/assets/video/poleron-giro.webm" type="video/webm"><source src="/assets/video/poleron-giro.mp4" type="video/mp4">
@@ -119,15 +126,15 @@
           <canvas id="giro-color" aria-hidden="true"></canvas>
           <canvas id="giro-trama" aria-hidden="true"></canvas>
           <i class="solucion-luz" aria-hidden="true"></i>
+         </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="hecho" aria-labelledby="t-hecho">
+      </div>
+      <div class="panel panel-hecho hecho" aria-labelledby="t-hecho">
     <div class="hecho-cabeza borde-arriba">
       <div class="contenedor">
-        <h2 class="hecho-titulo t-h2" id="t-hecho" data-rev><span class="acento">Hecho en <span class="hecho-cambia"><span class="activa">Chile</span><span>el taller</span></span></span><br>a la medida<br>de quien lo usa</h2>
+        <h2 class="hecho-titulo t-h2" id="t-hecho" data-fila><span class="acento">Hecho en <span class="hecho-cambia"><span class="activa">Chile</span><span>el taller</span></span></span><br>a la medida<br>de quien lo usa</h2>
         <div class="hecho-mapa" aria-hidden="true">
           <img class="activa trama" src="/assets/img/mapas/chile.png" alt="" loading="lazy">
           <img class="trama" src="/assets/img/mapas/chile-cerca.png" alt="" loading="lazy">
@@ -135,10 +142,12 @@
       </div>
     </div>
     <div class="cifras">
-      <div class="cifra" data-rev>{{icono:clases}}<div><p class="cifra-n">4</p><p class="cifra-txt">Clases en «Lo hice yo»</p></div></div>
-      <div class="cifra" data-rev style="--d:.1s">{{icono:cantidad}}<div><p class="cifra-n">1</p><p class="cifra-txt">Pieza: el pedido mínimo</p></div></div>
-      <div class="cifra" data-rev style="--d:.2s">{{icono:gestion}}<div><p class="cifra-n">3</p><p class="cifra-txt">Oficios: producción, gestión, diseño</p></div></div>
-      <a class="cifra cifra-enlace" href="/produccion/" data-rev style="--d:.3s">{{flecha}}<p class="t-h4">¿Quieres ver cómo trabajamos?</p></a>
+      <div class="cifra" data-fila>{{icono:clases}}<div><p class="cifra-n">4</p><p class="cifra-txt">Clases en «Lo hice yo»</p></div></div>
+      <div class="cifra" data-fila style="--d:.1s">{{icono:cantidad}}<div><p class="cifra-n">1</p><p class="cifra-txt">Pieza: el pedido mínimo</p></div></div>
+      <div class="cifra" data-fila style="--d:.2s">{{icono:gestion}}<div><p class="cifra-n">3</p><p class="cifra-txt">Oficios: producción, gestión, diseño</p></div></div>
+      <a class="cifra cifra-enlace" href="/produccion/" data-fila style="--d:.3s">{{flecha}}<p class="t-h4">¿Quieres ver cómo trabajamos?</p></a>
+    </div>
+      </div>
     </div>
   </section>
 

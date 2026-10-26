@@ -1,27 +1,37 @@
 <footer class="pie">
-  <div class="pie-llamado">
-    <div class="contenedor">
-      <div class="pie-llamado-texto" data-rev>
-        <h2 class="t-h3">Cursos, talleres <span class="acento">y encargos</span></h2>
-        <p>Déjanos tus datos y te escribimos con fechas, horario y valor, o para conversar tu prenda.</p>
+  <div class="pie-principal">
+    <div class="pie-novedades">
+      <div class="contenedor">
+        <div class="pie-novedades-texto">
+          <h2 class="pie-novedades-titulo">Novedades <br>del <span class="acento">taller</span></h2>
+          <p>Déjanos tu correo y te avisamos de los próximos cursos y talleres.</p>
+        </div>
+        <form class="pie-correo" id="pie-correo" novalidate>
+          <label class="solo-lector" for="pie-correo-campo">Tu correo</label>
+          <input id="pie-correo-campo" name="contacto" type="email" autocomplete="email" placeholder="Tu correo" maxlength="160" required>
+          <input class="trampa" name="sitio_web" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <p class="pie-correo-estado" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <a class="boton" href="/cursos/#inscripcion" data-rev><span class="boton-txt"><span>Inscríbete o pregúntanos</span><span aria-hidden="true">Inscríbete o pregúntanos</span></span></a>
+    </div>
+    <div class="pie-cuerpo">
+      <div class="contenedor">
+        <nav class="pie-menu" aria-label="Páginas">
+          <a href="/" {pie-inicio}>Inicio</a><a href="/produccion/">Producción</a><a href="/#taller">El taller</a><a href="/cursos/">Cursos</a><a href="/cursos/#inscripcion">Escríbenos</a>
+        </nav>
+        <div class="pie-datos">
+          <div><h3>Laboratorio Textil</h3><p>El taller textil de Natalia<br>Producción · Gestión · Diseño<br>Capacitación<br>Chile</p></div>
+          <div><h3>En línea</h3><p><a class="enlace-linea" href="https://www.laboratoriotextil.com/">www.laboratoriotextil.com</a><br><a class="enlace-linea" href="https://puatextil.com">puatextil.com</a> · <a class="enlace-linea" href="https://puatextil.com/intranet">Intranet</a></p></div>
+          <p class="lema">Donde la costura se vuelve ciencia.</p>
+        </div>
+        <div class="pie-logo"><i class="pie-logo-e e1"></i><i class="pie-logo-e e2"></i><i class="pie-logo-e e3"></i><i class="pie-logo-e e4"></i><img src="/assets/img/logo-negativo.svg" alt="Laboratorio Textil" width="133" height="133"></div>
+      </div>
     </div>
   </div>
-  <div class="pie-cuerpo">
-    <div class="contenedor">
-      <nav class="pie-menu" aria-label="Páginas">
-        <a href="/">Inicio</a><a href="/produccion/">Producción</a><a href="/cursos/">Cursos</a><a href="/cursos/#inscripcion">Escríbenos</a>
-      </nav>
-      <div class="pie-datos">
-        <div><h3>Laboratorio Textil</h3><p>El taller textil de Natalia<br>Producción · Gestión · Diseño<br>Capacitación<br>Chile</p></div>
-        <div><h3>También</h3><p><a class="enlace-linea" href="https://puatextil.com">PUA · puatextil.com</a><br><a class="enlace-linea" href="https://puatextil.com/intranet">Intranet</a></p></div>
-        <p class="lema">Donde la costura se vuelve ciencia.</p>
-      </div>
-      <div class="pie-logo esquinas"><img src="/assets/img/logo-negativo.svg" alt="Laboratorio Textil" width="130" height="130"></div>
-    </div>
+  <div class="pie-fondo">
+    <div class="pie-cinta" aria-hidden="true"><div class="pie-cinta-pista"><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span></div></div>
+    <div class="pie-regla" aria-hidden="true"></div>
+    <div class="pie-final"><span>laboratoriotextil.com</span><span>Laboratorio Textil</span><span>© <span data-anio>2026</span> Laboratorio Textil</span></div>
   </div>
-  <div class="pie-cinta" aria-hidden="true"><div class="pie-cinta-pista"><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span><span>Conversemos hoy •</span></div></div>
-  <div class="pie-regla" aria-hidden="true"></div>
-  <div class="pie-final"><span>© <span data-anio>2026</span> Laboratorio Textil</span><a href="https://www.laboratoriotextil.com/">www.laboratoriotextil.com</a></div>
 </footer>
