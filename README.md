@@ -2,7 +2,7 @@
 
 Sitio público de **Laboratorio Textil**, el taller textil de Natalia: producción, gestión y diseño de
 prendas y piezas a medida, y capacitación para todas las edades y escalas. Tres páginas en español de
-Chile, fondo oscuro con acento verde azulado (#00a19d), tipografía Inter, la marca «Botón con aguja».
+Chile, fondo oscuro con acento verde azulado (#00a19d), tipografía Inter Tight, la marca «Botón con aguja».
 
 | Página | Qué tiene |
 |---|---|
@@ -38,10 +38,10 @@ assets/produccion.js    la línea de las prendas y el carrusel del proceso
 assets/app.js           el formulario de inscripción
 assets/lib/             GSAP 3.13 con ScrollTrigger y SplitText (licencia estándar gratuita, uso comercial
                         permitido) y Lenis 1.3.4 (MIT, LICENSE-lenis.txt)
-assets/fonts/           Inter 300/400/500 (OFL, OFL-Inter.txt)
+assets/fonts/           Inter Tight 300/400/500 (OFL, OFL-InterTight.txt)
 assets/img/             logo, fotos del taller, portadas de video, prendas/ (20 prendas, blancas y en trama),
                         mapas/ (globo y acercamiento de Chile), marcas/ (logos blancos de las marcas)
-assets/video/           lo-hice-yo.mp4, talleres-ninas-ninos.mp4, poleron-giro.{mp4,webm,jpg}
+assets/video/           lo-hice-yo.mp4, talleres-ninas-ninos.mp4, poleron-giro, tela (portada), maquina (caja del taller)
 favicon.svg, apple-touch-icon.png, CNAME
 ```
 
@@ -57,6 +57,13 @@ De dónde sale cada cosa:
   de pesos abiertos, y `scripts/activos.py` del estudio `forge:pancho/laboratoriotextil-produccion`.
 - **Texto del curso:** el programa de Natalia (`proyectos/laboratoriotextil/talleres/lo-hice-yo-programa.md`).
   El sitio no da edades, horarios, precios ni dirección: están por confirmar con ella.
+- **Videos de la portada y del taller, imágenes grandes:** hechos en whitebox con modelos locales de pesos
+  abiertos y sin marca de agua, desde `herramientas/medios/`. La tela de la portada es una imagen de
+  Lumina-Image-2.0 animada con Wan 2.2; la caja del taller es una foto real de la máquina del taller (Immich)
+  animada con Wan 2.2; las ondas del llamado son de Lumina; la escena, la foto ancha y la máquina de
+  producción son de Qwen-Image a 1664 px (`imagenes.json` lleva los prompts, `imagenes.py` y `videos.sh`
+  los generan). Los clips se repiten de ida y vuelta para no tener corte.
+- **Sin comida en las imágenes:** ninguna foto ni cuadro de video muestra comida.
 - **Cifras de la industria** (portada, «El desafío»): cada una lleva su fuente y año en el texto.
 
 ## Inscripciones
@@ -80,5 +87,5 @@ git push github main             # publica en www.laboratoriotextil.com
 
 ## Estado
 
-- En vivo en www.laboratoriotextil.com (tres páginas, 2026-10-25).
+- En vivo en www.laboratoriotextil.com (tres páginas, 2026-10-26).
 - Falta confirmar con Natalia las edades, horarios, valor y lugar, para sumarlos.
